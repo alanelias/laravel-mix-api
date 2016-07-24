@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Comming Soon",
   "main": "src/index.js",
+  "author": "Alan Elias",
+  "license": "ISC",
   "scripts": {
-    "gulp": "gulp",
-    "setup": "echo [] > ../../../scripts.json; echo [] > ../../../styles.json; echo [] > ../../../assets.json"
+    "gulp": "gulp"
   },
   "maintainers": [
     {
@@ -13,11 +14,10 @@
       "name": "Alan Elias"
     }
   ],
-  "author": "Alan Elias",
-  "license": "ISC",
   "dependencies": {
+    "gulp": "^3.9.1",
+    "laravel-elixir": "^3.0.0",
     "del": "^2.2.1",
-    "gulp-clean": "^0.3.2",
     "gulp-color": "0.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
