@@ -1,13 +1,19 @@
 {
   "name": "alixir",
   "version": "1.0.0",
-  "description": "",
+  "description": "Comming Soon",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "echo [] > ../../../scripts.json; echo [] > ../../../styles.json"
+    "gulp": "gulp",
+    "setup": "echo [] > ../../../scripts.json; echo [] > ../../../styles.json; echo [] > ../../../assets.json"
   },
-  "author": "",
+  "maintainers": [
+    {
+      "email": "alaaelias@gmail.com",
+      "name": "Alan Elias"
+    }
+  ],
+  "author": "Alan Elias",
   "license": "ISC",
   "dependencies": {
     "del": "^2.2.1",
@@ -18,5 +24,9 @@
     "gulp-util": "^3.0.7",
     "task-yargs": "^0.1.5",
     "yargs": "^4.7.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonschlinkert/align-text.git"
   }
 }
