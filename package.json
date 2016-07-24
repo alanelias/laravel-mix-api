@@ -5,20 +5,17 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "echo [] > ../../../scripts.json; echo [] > ../../../styles.json"
+    "install": "echo [] > ../../../scripts.json; echo [] > ../../../styles.json"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "del": "^2.2.1",
-    "elixir-busting": "^1.0.2",
-    "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-color": "0.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
     "gulp-util": "^3.0.7",
-    "laravel-elixir": "^3.0.0",
     "task-yargs": "^0.1.5",
     "yargs": "^4.7.1"
   }
