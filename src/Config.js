@@ -37,7 +37,7 @@ var package_config = {
     files: {
         config: "alixir.json",
         styles: "styles.json",
-        script: "styles.json",
+        scripts: "scripts.json",
         assets: "assets.json"
     }
 };

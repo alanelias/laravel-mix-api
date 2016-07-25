@@ -19,14 +19,18 @@
  */
 
 
-/**
- * return vendor/bower/bower_folder/{file-path}
- * @param path
- * @returns {string}
- */
-function bowerPath( path ){
-    return "../../../vendor/bower_dl/" + path;
+var gutil = require('gulp-util'),
+    color = require('gulp-color'),
+    config = gutil.env.ALIXIER_CONFIG;
+
+
+var tasks = [];
+
+try {
+    var tasks = require(config.path.project + config.files.scripts);
+}catch (error){
+    // do nothing
+    console.log(color(error, "RED"));
 }
 
-// "datatables.net/js/jquery.dataTables.js"
-module.exports =  [];
+module.exports =  tasks;
