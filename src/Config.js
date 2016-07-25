@@ -53,12 +53,12 @@ try {
 
 package_config = MergeRecursive(package_config, override_package_config);
 
-var gunit_config = util.env.ALIXIER_CONFIG;
+var gunit_config = gutil.env.ALIXIER_CONFIG;
 if(gunit_config){
     package_config = MergeRecursive(package_config, gunit_config);
 }
 
-util.env.ALIXIER_CONFIG =  package_config;
+gutil.env.ALIXIER_CONFIG =  package_config;
 
 /**
  *

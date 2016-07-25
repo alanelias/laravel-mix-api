@@ -14,9 +14,9 @@ var gulp = require('gulp'),
     /* filter index */
     invalidEntries = 0,
     /* js files array */
-    jsFiles = require('./gulpjs.js'),
+    jsFiles = require('./scripts.js'),
     /* css files array */
-    cssFiles = require('./gulpcss.js'),
+    cssFiles = require('./styles.js'),
     /* gulp bower package manager */
     assetsTasks = require('./assets.js'),
     assetsTasksConfig = assetsTasks.config;
