@@ -7,21 +7,21 @@ var gulp = require('gulp'),
     color = require('gulp-color'),
     elixir = require('laravel-elixir'),
     fs = require("fs"),
+    /* Load Config */
+    config = require('./Config.js'),
     /* Task Yargs Flags Manager */
     argv = require('yargs').argv,
     /* filter index */
     invalidEntries = 0,
-    /* Load Config */
-    config = require('./Config.js'),
     /* js files array */
     jsFiles = require('./gulpjs.js'),
     /* css files array */
     cssFiles = require('./gulpcss.js'),
     /* gulp bower package manager */
-    bowerManager = require('./assets.js')({ config: config  }),
-    bowerManagerConfig = bowerManager.config;
+    assetsTasks = require('./assets.js'),
+    assetsTasksConfig = assetsTasks.config;
 
-
+console.log(config);
 /**
  *  Files Array
  */
@@ -132,8 +132,8 @@ function filterByTemplate(obj) {
  * assets gulp task do all bower packages (fonts/images/search and replace/rename/copy) files
  */
 gulp.task("assets", function () {
-    var tasks = bowerManager.tasks;
-    tasks.forEach(applyGulpBowerManager, gulp);
+    var tasks = assetsTasks.tasks;
+    tasks.forEach(applyGulpassetsTasks, gulp);
 });
 
 
@@ -143,13 +143,13 @@ gulp.task("assets", function () {
  * @param index
  * @param array
  */
-function applyGulpBowerManager(obj, index, array) {
+function applyGulpassetsTasks(obj, index, array) {
     // if it has files array
     if (typeof(obj.package) != 'undefined') {
 
         console.log(color("Package Name: " + obj.package, 'WHITE'));
 
-        obj.files.filter(applyGulpBowerManager, this);
+        obj.files.filter(applyGulpassetsTasks, this);
 
     } else {
 
@@ -157,12 +157,12 @@ function applyGulpBowerManager(obj, index, array) {
             return false;
         }
 
-        if (!existsSync(bowerManagerConfig.bowerDir + filterPath(obj.copy.from))) {
+        if (!existsSync(assetsTasksConfig.bowerDir + filterPath(obj.copy.from))) {
             console.log(color("File Not Exists: " + obj.copy.from + " | " + obj.copy.to, 'RED'));
             return false;
         }
 
-        this.src(bowerManagerConfig.bowerDir + obj.copy.from)
+        this.src(assetsTasksConfig.bowerDir + obj.copy.from)
             .pipe(typeof(obj.copy.replace) != 'undefined' ? replace(obj.copy.replace.find, obj.copy.replace.with) : gutil.noop())
             .pipe(typeof(obj.copy.rename) != 'undefined' ? rename(obj.copy.rename) : gutil.noop())
             .pipe(this.dest(obj.copy.to));

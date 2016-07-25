@@ -45,11 +45,19 @@
  *  ]
  */
 
-console.log(config);
+var gutil = require('gulp-util'),
+    color = require('gulp-color'),
+    config = gutil.env.ALIXIER_CONFIG;
 
-module.exports = {
-    config: {
-        bowerDir: 'vendor/bower_dl/'
-    },
-    tasks: []
-};
+
+var tasks = {};
+
+try {
+    var tasks = require(config.path.project + config.files.assets);
+}catch (error){
+    // do nothing
+    console.log(color(error, "RED"));
+}
+
+
+module.exports = tasks;

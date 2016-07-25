@@ -1,3 +1,7 @@
+var gutil = require('gulp-util'),
+    color = require('gulp-color'),
+    PROJECT_DIR = process.cwd();
+
 /*
  * Recursively merge properties of two objects
  */
@@ -24,11 +28,10 @@ function MergeRecursive(obj1, obj2) {
     return obj1;
 }
 
-var PROJECT_DIR = process.cwd();
 
 var package_config = {
     path: {
-        project: PROJECT_DIR,
+        project: PROJECT_DIR + "/",
         custom: []
     },
     files: {
@@ -39,15 +42,23 @@ var package_config = {
     }
 };
 
-var override_package_config = null;
+var override_package_config = {};
 
 try {
     var override_package_config = require(package_config.path.project + package_config.files.config);
 }catch (err){
     // do nothing
+    console.log(color("Note: there is no " + package_config.files.config, "YELLOW"));
 }
 
-console.log(MergeRecursive(package_config, override_package_config));
+package_config = MergeRecursive(package_config, override_package_config);
+
+var gunit_config = util.env.ALIXIER_CONFIG;
+if(gunit_config){
+    package_config = MergeRecursive(package_config, gunit_config);
+}
+
+util.env.ALIXIER_CONFIG =  package_config;
 
 /**
  *
