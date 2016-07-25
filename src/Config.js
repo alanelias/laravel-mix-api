@@ -1,48 +1,56 @@
-/**
- *
- * @type {{show: module.exports.show}}
+/*
+ * Recursively merge properties of two objects
  */
+function MergeRecursive(obj1, obj2) {
 
-var fs = require("fs");
+    for (var p in obj2) {
+        try {
+            // Property in destination object set; update its value.
+            if ( obj2[p].constructor==Object ) {
+                obj1[p] = MergeRecursive(obj1[p], obj2[p]);
+
+            } else {
+                obj1[p] = obj2[p];
+
+            }
+
+        } catch(e) {
+            // Property in destination object not set; create it and set its value.
+            obj1[p] = obj2[p];
+
+        }
+    }
+
+    return obj1;
+}
 
 var package_config = {
     path: {
         project: "../../../",
-        custom: [{
-            path: "../../../bower",
-            rgx: "%bower%"
-        },{
-            path: "../../../bower",
-            rgx: "%bower%"
-        }]
+        custom: []
     },
     files: {
-        config: this.path.project + "alixir.json",
+        config: "alixir.json",
         styles: "styles.json",
         script: "styles.json",
         assets: "assets.json"
     }
 };
 
-if(existsSync(package_config.files.config)){
-    console.log("config there");
-}else {
-    console.log("no config there");
+var override_package_config = null;
+
+try {
+    var override_package_config = require(package_config.path.project + package_config.files.config);
+}catch (err){
+    // do nothing
 }
 
-
-module.exports = package_config;
+console.log(MergeRecursive(package_config, override_package_config));
 
 /**
- * check file exists
- * @param filename
- * @returns {boolean}
+ *
+ * @type {{path: {project: string, custom: *[]}, files: {config: string, styles: string, script: string, assets: string}}}
  */
-function existsSync(filename) {
-    try {
-        fs.accessSync(filename);
-        return true;
-    } catch (ex) {
-        return false;
-    }
-}
+module.exports = package_config;
+
+

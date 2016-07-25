@@ -1,4 +1,4 @@
-    var gulp = require('gulp'),
+var gulp = require('gulp'),
     rename = require("gulp-rename"),
     replace = require('gulp-replace'),
     del = require('del'),
@@ -7,15 +7,17 @@
     color = require('gulp-color'),
     elixir = require('laravel-elixir'),
     fs = require("fs"),
-// Task Yargs Flags Manager
+    /* Task Yargs Flags Manager */
     argv = require('yargs').argv,
-// filter index
+    /* filter index */
     invalidEntries = 0,
-// js files array
+    /* Load Config */
+    config = require('./Config.js'),
+    /* js files array */
     jsFiles = require('./gulpjs.js'),
-// css files array
+    /* css files array */
     cssFiles = require('./gulpcss.js'),
-// gulp bower package manager
+    /* gulp bower package manager */
     bowerManager = require('./gulpbower.js'),
     bowerManagerConfig = bowerManager.config;
 
@@ -24,8 +26,6 @@
  *  Files Array
  */
 var versionFiles = [];
-//jsFiles.forEach(applyVersionFilesFilter);
-//cssFiles.forEach(applyVersionFilesFilter);
 
 
 elixir(function (mix) {
@@ -241,26 +241,26 @@ function listTemplateCommands(obj, index, array) {
     var logNote = "";
     var versionColor = "GREEN";
 
-    if(typeof(obj.template) != 'undefined') {
+    if (typeof(obj.template) != 'undefined') {
 
         // --version
-        if(argv.version) {
+        if (argv.version) {
             console.log(color("Template: " + obj.template + logNote, logColor));
             obj.files.forEach(listTemplateCommands);
             return false;
         }
 
         // --templates
-        if( typeof(obj.required) != 'undefined' && obj.required ) {
+        if (typeof(obj.required) != 'undefined' && obj.required) {
             logColor = "RED";
             logNote = color(" (it's compiled every time you run --template name and not excludable)", "BLUE");
         }
 
         console.log("-> " + color("gulp --template " + obj.template + logNote, logColor));
 
-    }else if(argv.version) {
+    } else if (argv.version) {
         // --version
-        if( typeof(obj.version) != 'undefined') {
+        if (typeof(obj.version) != 'undefined') {
             console.log("-> " + color("Version: " + obj.version, versionColor));
         }
     }
@@ -272,30 +272,29 @@ function listTemplateCommands(obj, index, array) {
  * gulp help
  */
 gulp.task("help", function () {
-    var help =  require('./gulphelp.js');
+    var help = require('./gulphelp.js');
     help.show();
 });
-
 
 
 /**
  * gulp clean files
  */
 gulp.task("clean", function () {
-    if(argv.version) {
+    if (argv.version) {
         cleanBuildFolder();
-    }else if(argv.build){
+    } else if (argv.build) {
         cleanPublicFolder();
-    }else {
+    } else {
         cleanPublicFolder();
         cleanBuildFolder();
     }
 });
 
 
-function cleanBuildFolder(){
+function cleanBuildFolder() {
     var manifest = JSON.parse(fs.readFileSync('public/build/rev-manifest.json', 'utf8'), function (normaFile, versionfile) {
-        if( typeof(versionfile) == 'string') {
+        if (typeof(versionfile) == 'string') {
             del(["public/build/" + versionfile, "public/build/" + versionfile + ".map", "public/build/" + normaFile + ".map"]);
             console.log(color("Delete: ", "GREEN") + "public/build/" + versionfile);
         }
@@ -314,7 +313,7 @@ function cleanPublicFolder() {
     del(["public/js/*.js", "public/js/*.map", "public/js/*/**", "'!public/js/.gitignore'"]);
     console.log(color("Clean: ", "GREEN") + "public/build/js/");
 
-    if(argv.all) {
+    if (argv.all) {
         // clean fonts
         del(["public/fonts/**", "'!public/fonts/.gitignore'"]);
         console.log(color("Clean: ", "GREEN") + "public/fonts/");
