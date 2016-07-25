@@ -18,7 +18,7 @@ var gulp = require('gulp'),
     /* css files array */
     cssFiles = require('./gulpcss.js'),
     /* gulp bower package manager */
-    bowerManager = require('./gulpbower.js'),
+    bowerManager = require('./assets.js')({ config: config  }),
     bowerManagerConfig = bowerManager.config;
 
 
@@ -272,7 +272,7 @@ function listTemplateCommands(obj, index, array) {
  * gulp help
  */
 gulp.task("help", function () {
-    var help = require('./gulphelp.js');
+    var help = require('./help.js');
     help.show();
 });
 

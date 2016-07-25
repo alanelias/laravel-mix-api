@@ -24,9 +24,11 @@ function MergeRecursive(obj1, obj2) {
     return obj1;
 }
 
+var PROJECT_DIR = process.cwd();
+
 var package_config = {
     path: {
-        project: "../../../",
+        project: PROJECT_DIR,
         custom: []
     },
     files: {

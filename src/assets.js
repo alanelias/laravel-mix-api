@@ -45,6 +45,8 @@
  *  ]
  */
 
+console.log(config);
+
 module.exports = {
     config: {
         bowerDir: 'vendor/bower_dl/'

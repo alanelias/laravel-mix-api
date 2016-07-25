@@ -124,12 +124,12 @@ module.exports = {
         // divider
         console.log(color(divider, dividerColor));
 
-        // gulp list
+        // gulp assets
         console.log(color("Gulp Assets:", titleColor));
 
         // gulp assets
         console.log("-> " + color("gulp assets ", "RED") +
-            color("( runs " + color("gulpbower.js tasks", highlightColor) + ", copying " + color("fonts, images, search-replace", highlightColor) + " on required files from "  + color("bower packages folder to public folder", highlightColor) + " )", "WHITE"));
+            color("( runs " + color("assets.js tasks", highlightColor) + ", copying " + color("fonts, images, search-replace", highlightColor) + " on required files from "  + color("bower packages folder to public folder", highlightColor) + " )", "WHITE"));
 
 
     }
