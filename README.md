@@ -24,7 +24,7 @@ npm install alixir --save-dev
 require('alixir');
 ```
 
-Create **alixir.json** in the project root to override alixir config (files, filters and path) 
+Create **alixir.json** in the project root to override alixir config (files, filters and path) [see documentaion](ALIXIR.md) 
 ```
 {
   "files": {
@@ -190,7 +190,7 @@ Create **assets.json** [see documentaion](ASSETS.md)
 ]
 ```
 
-## gulp [see documentaion](ALIXIR.md) 
+## gulp [see documentaion](GULP.md) 
 
 start with:
 ```
