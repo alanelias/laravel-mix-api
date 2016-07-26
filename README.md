@@ -7,13 +7,10 @@ Alixir is `npm package` built on top of elixer and gulp, its an easy cleaning so
 npm install alixir --save-dev
 ```
 
-### Override Bower Dir ###
-**File:** `.bowerrc`
+### Usage ###
+**gulpfile.js:** 
 ```
-#!json
-{
-  "directory": "vendor/bower_dl"
-}
+require('alixir');
 ```
 
 ### Install Packages With Bower ###
@@ -171,3 +168,14 @@ Gulp Notify:
 -> gulp --notify stop( adding --notify stop, disables gulp notifications on all commands
 
 ```
+
+## Authors
+
+* **Alan Elias** - *Initial work* - [AlanElias](https://github.com/AlanElias)
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+
