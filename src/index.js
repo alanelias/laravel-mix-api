@@ -1,16 +1,22 @@
 var gulp = require('gulp'),
-    rename = require("gulp-rename"),
+    // Task Yargs Flags Manager
+    argv = require('yargs').argv,
+    gutil = require('gulp-util'),
+    /* Load Config */
+    config = require('./Config.js');
+
+// disable elixir notification
+if ( config.other.DISABLE_NOTIFIER || argv.notify == "stop" ) {
+    process.env.DISABLE_NOTIFIER = true;
+}
+
+var rename = require("gulp-rename"),
     replace = require('gulp-replace'),
     del = require('del'),
-    gutil = require('gulp-util'),
     clean = require('gulp-clean'),
     color = require('gulp-color'),
     elixir = require('laravel-elixir'),
     fs = require("fs"),
-    /* Load Config */
-    config = require('./Config.js'),
-    /* Task Yargs Flags Manager */
-    argv = require('yargs').argv,
     /* filter index */
     invalidEntries = 0,
     /* js files array */
@@ -18,10 +24,8 @@ var gulp = require('gulp'),
     /* css files array */
     cssFiles = require('./styles.js'),
     /* gulp bower package manager */
-    assetsTasks = require('./assets.js'),
-    assetsTasksConfig = assetsTasks.config;
+    assetsTasks = require('./assets.js');
 
-console.log(config);
 /**
  *  Files Array
  */
@@ -31,27 +35,45 @@ var versionFiles = [];
 elixir(function (mix) {
     if (argv.css) {
 
+        // with --css flag
         compileCSS(mix, cssFiles);
 
     } else if (argv.js) {
 
+        // with --js flag
         compilejS(mix, jsFiles);
 
     } else {
 
+        // with no flag
         compileCSS(mix, cssFiles);
         compilejS(mix, jsFiles);
-        // Version Assets
-
     }
 
-
+    // with --production flag
     if (argv.production) {
+
         mix.version(versionFiles);
+        publishImages(mix);
+    }
+
+    // with --images flag
+    if (argv.images) {
+
+        publishImages(mix);
     }
 
     //console.log(versionFiles);
 });
+
+/**
+ *  Function To publish images to public
+ *
+ * @param mix
+ **/
+function publishImages(mix) {
+    mix.copy(applyPathFilter(config.path.assets.images+'**'), applyPathFilter(config.path.dist.images));
+}
 
 /**
  *  Function To Compile and watch css files
@@ -83,12 +105,12 @@ function applyMixOnFiles(obj, index, array) {
         obj.files.filter(applyMixOnFiles, this);
     } else if (typeof(obj.filesIn) != 'undefined') {
         if (typeof(obj.fileOut) != 'undefined') {
-            this[obj.type](obj.filesIn, obj.fileOut);
+            this[obj.type](applyPathFilter(obj.filesIn), applyPathFilter(obj.fileOut));
         } else {
-            this[obj.type](obj.filesIn);
+            this[obj.type](applyPathFilter(obj.filesIn));
         }
         if (typeof(obj.version) != 'undefined') {
-            versionFiles.push(obj.version);
+            versionFiles.push(applyPathFilter(obj.version));
         }
     }
 }
@@ -132,8 +154,7 @@ function filterByTemplate(obj) {
  * assets gulp task do all bower packages (fonts/images/search and replace/rename/copy) files
  */
 gulp.task("assets", function () {
-    var tasks = assetsTasks.tasks;
-    tasks.forEach(applyGulpassetsTasks, gulp);
+    assetsTasks.forEach(applyGulpassetsTasks, gulp);
 });
 
 
@@ -157,15 +178,19 @@ function applyGulpassetsTasks(obj, index, array) {
             return false;
         }
 
-        if (!existsSync(assetsTasksConfig.bowerDir + filterPath(obj.copy.from))) {
-            console.log(color("File Not Exists: " + obj.copy.from + " | " + obj.copy.to, 'RED'));
+        var copy_from_path = applyPathFilter(obj.copy.from);
+
+        var copy_to_path = applyPathFilter(obj.copy.to);
+
+        if (!existsSync(filterPath(copy_from_path))) {
+            console.log(color("File Not Exists: " + copy_from_path + " | " + copy_to_path, 'RED'));
             return false;
         }
 
-        this.src(assetsTasksConfig.bowerDir + obj.copy.from)
+        this.src(copy_from_path)
             .pipe(typeof(obj.copy.replace) != 'undefined' ? replace(obj.copy.replace.find, obj.copy.replace.with) : gutil.noop())
             .pipe(typeof(obj.copy.rename) != 'undefined' ? rename(obj.copy.rename) : gutil.noop())
-            .pipe(this.dest(obj.copy.to));
+            .pipe(this.dest(applyPathFilter(copy_to_path)));
 
         var logName = "Copy";
         if (typeof(obj.copy.replace) != 'undefined') {
@@ -175,7 +200,7 @@ function applyGulpassetsTasks(obj, index, array) {
             logName += "/Rename";
         }
 
-        console.log(color(logName + ": " + obj.copy.from + " | " + obj.copy.to, 'GREEN'));
+        console.log(color(logName + ": " + copy_from_path + " | " + copy_to_path, 'GREEN'));
 
     }
 
@@ -207,6 +232,60 @@ function existsSync(filename) {
     } catch (ex) {
         return false;
     }
+}
+
+
+/**
+ * apply path filter on string or array of files
+ *
+ * @param collection
+ * @returns {*}
+ */
+function applyPathFilter(collection) {
+
+    if (typeof(collection) === "string") {
+        return applyCustomPath(collection);
+    }
+
+    if (Array.isArray(collection)) {
+        collection.forEach(applyPathFilterOnFilesList, collection);
+    }
+
+    return collection;
+}
+
+/**
+ * apply path filter on array of files
+ *
+ * @param file
+ * @param index
+ * @param array
+ */
+function applyPathFilterOnFilesList(file, index, array) {
+    this[index] = applyCustomPath(file);
+}
+
+
+/**
+ * apply custom path {"%bowerfolder%": "../../bower.."}
+ *
+ * @param path
+ * @returns {*}
+ */
+function applyCustomPath(path) {
+    if (!config.filters) {
+        return path;
+    }
+
+    try {
+        path = path.replace(config.other.RegExp, function (matched) {
+            return config.filters[matched];
+        });
+    } catch (error) {
+
+    }
+    return path;
+
 }
 
 
@@ -280,49 +359,60 @@ gulp.task("help", function () {
 /**
  * gulp clean files
  */
-gulp.task("clean", function () {
-    if (argv.version) {
-        cleanBuildFolder();
-    } else if (argv.build) {
-        cleanPublicFolder();
-    } else {
-        cleanPublicFolder();
-        cleanBuildFolder();
+gulp.task("clean", function (cb) {
+    if(argv.version) {
+        cleanBuildFolder(cb);
+    }else if(argv.build){
+        cleanPublicFolder(cb);
+    }else {
+        cleanPublicFolder(cb);
+        cleanBuildFolder(cb);
     }
 });
 
 
-function cleanBuildFolder() {
-    var manifest = JSON.parse(fs.readFileSync('public/build/rev-manifest.json', 'utf8'), function (normaFile, versionfile) {
-        if (typeof(versionfile) == 'string') {
-            del(["public/build/" + versionfile, "public/build/" + versionfile + ".map", "public/build/" + normaFile + ".map"]);
-            console.log(color("Delete: ", "GREEN") + "public/build/" + versionfile);
-        }
-    });
-    del(['public/build/rev-manifest.json']);
-    console.log(color("Delete: ", "GREEN") + "public/build/rev-manifest.json" + versionfile);
+function cleanBuildFolder(cb){
+    // clean up the build folder
+    var build_folder = applyPathFilter(config.path.version.build);
+    del([ build_folder + '**' ], cb);
+    console.log(color("Clean: ", "GREEN") + build_folder);
 }
 
-function cleanPublicFolder() {
+function cleanPublicFolder(cb) {
+    var styles_folder = applyPathFilter(config.path.dist.styles);
+    var scripts_folder = applyPathFilter(config.path.dist.scripts);
 
-    // clean css
-    del(["public/css/*.css", "public/css/*.map", "'!public/css/.gitignore'"]);
-    console.log(color("Clean: ", "GREEN") + "public/build/css/");
+    // clean dist css
+    del([ styles_folder + "**" ], cb);
+    console.log(color("Clean: ", "GREEN") + styles_folder);
 
-    // clean js
-    del(["public/js/*.js", "public/js/*.map", "public/js/*/**", "'!public/js/.gitignore'"]);
-    console.log(color("Clean: ", "GREEN") + "public/build/js/");
+    // clean dist js
+    del([ scripts_folder + "**" ], cb);
+    console.log(color("Clean: ", "GREEN") + scripts_folder);
 
-    if (argv.all) {
+    // with --all flag
+    if(argv.all) {
+
+        var fonts_folder = applyPathFilter(config.path.dist.fonts);
+        var images_folder = applyPathFilter(config.path.dist.images);
+
         // clean fonts
-        del(["public/fonts/**", "'!public/fonts/.gitignore'"]);
-        console.log(color("Clean: ", "GREEN") + "public/fonts/");
+        del([ fonts_folder + "**"], cb);
+        console.log(color("Clean: ", "GREEN") + fonts_folder);
+
+        // clean images
+        del([ images_folder + "**" ], cb);
+        console.log(color("Clean: ", "GREEN") + images_folder);
     }
 
 }
 
-
-
+/**
+ * gulp config
+ */
+gulp.task("config", function () {
+    console.log(color("Config: ", "GREEN") + JSON.stringify(config, null, 4));
+});
 
 
 

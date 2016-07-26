@@ -1,7 +1,7 @@
 var color = require('gulp-color');
 
 /**
- *  it log out all gulp help guides 
+ *  it log out all gulp help guides
  * @type {{show: module.exports.show}}
  */
 module.exports = {
@@ -36,6 +36,11 @@ module.exports = {
                 ", and export them to public folder and " + color("exclude all except templatename", highlightColor) + " and " +
                 color("exclude all css files except js ", highlightColor) + "by using " + color("--css ", highlightColor) + ")", "WHITE"));
 
+        // gulp  --images
+        console.log("-> " + color("gulp --images ", "RED") +
+            color("( compile " + color("js, css and images", highlightColor) + " files " + color("without version and minify", highlightColor) +
+                ", and export them to public folder , by using " + color("--images", highlightColor) + " adds images task to gulp", "WHITE"));
+
         // divider
         console.log(color(divider, dividerColor));
 
@@ -63,6 +68,11 @@ module.exports = {
             color("( watch and compile " + color("only css", highlightColor) + " files " + color("without version and minify", highlightColor) +
                 ", and export them to public folder and " + color("exclude all except templatename", highlightColor) + " and " +
                 color("exclude all css files except js ", highlightColor) + "by using " + color("--css ", highlightColor) + ")", "WHITE"));
+
+        // gulp  --images
+        console.log("-> " + color("gulp watch --images ", "RED") +
+            color("( watch and compile " + color("js, css and images", highlightColor) + " files " + color("without version and minify", highlightColor) +
+                ", and export them to public folder , by using " + color("--images", highlightColor) + " adds images task to gulp", "WHITE"));
 
         // divider
         console.log(color(divider, dividerColor));
@@ -124,12 +134,34 @@ module.exports = {
         // divider
         console.log(color(divider, dividerColor));
 
-        // gulp assets
+        // gulp Assets
         console.log(color("Gulp Assets:", titleColor));
 
         // gulp assets
         console.log("-> " + color("gulp assets ", "RED") +
-            color("( runs " + color("assets.js tasks", highlightColor) + ", copying " + color("fonts, images, search-replace", highlightColor) + " on required files from "  + color("bower packages folder to public folder", highlightColor) + " )", "WHITE"));
+            color("( runs " + color("gulpbower.js tasks", highlightColor) + ", copying " + color("fonts, images, search-replace", highlightColor) + " on required files from "  + color("bower packages folder to public folder", highlightColor) + " )", "WHITE"));
+
+        // divider
+        console.log(color(divider, dividerColor));
+
+        // Elixir Notify
+        console.log(color("Gulp Notification:", titleColor));
+
+        // gulp notify
+        console.log("-> " + color("gulp --notify stop", "RED") +
+            color("( adding " + color("--notify stop", highlightColor) +
+                ", disables gulp notifications" +
+                " on all commands", "WHITE"));
+
+        // divider
+        console.log(color(divider, dividerColor));
+
+        // gulp config
+        console.log(color("Config:", titleColor));
+
+        // gulp config
+        console.log("-> " + color("gulp config ", "RED") +
+            color(" view alixir config json file.", "WHITE"));
 
 
     }

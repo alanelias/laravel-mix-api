@@ -32,14 +32,35 @@ function MergeRecursive(obj1, obj2) {
 var package_config = {
     path: {
         project: PROJECT_DIR + "/",
-        custom: []
+        version: {
+            build: "public/build/",
+            manifest: "public/build/rev-manifest.json"
+        },
+        dist: {
+            images: "public/images/",
+            styles: "public/css/",
+            scripts: "public/js/",
+            fonts: "public/fonts/"
+        },
+        assets: {
+            images: "resources/assets/images/",
+            styles: "resources/assets/sass/",
+            scripts: "resources/assets/js/",
+            fonts: "resources/assets/public/fonts/"
+        }
     },
     files: {
         config: "alixir.json",
         styles: "styles.json",
         scripts: "scripts.json",
         assets: "assets.json"
-    }
+    },
+    other: {
+        DISABLE_NOTIFIER: false,
+        RegExp: null
+    },
+    filters:{}
+
 };
 
 var override_package_config = {};
@@ -57,6 +78,9 @@ var gunit_config = gutil.env.ALIXIER_CONFIG;
 if(gunit_config){
     package_config = MergeRecursive(package_config, gunit_config);
 }
+
+package_config.other.RegExp = new RegExp(Object.keys(package_config.filters).join("|"),"gi");
+
 
 gutil.env.ALIXIER_CONFIG =  package_config;
 

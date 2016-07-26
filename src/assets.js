@@ -12,14 +12,14 @@
  *                  },
  *                  copy: {  // copy and do search and replace and rename at the same time
  *                      from: "package-name/src/css/styles.css", // copy css from vendor/bower_dl/package-name/src/css/styles.css
-*
+ *
  *                      // you can always visit https://www.npmjs.com/package/gulp-replace for more information about regex
  *                      // regex e.g: { find: /foo(.{3})/g, with: '$1foo' }
  *                      replace: {
  *                          find: 'images/', // find in the document
  *                          with: '/img/package-name/' // and replace it with
  *                      },
-*
+ *
  *                       // you can always visit https://github.com/hparra/gulp-rename for more information about renaming
  *                      // regex e.g: rename:{ dirname: "main/text/ciao", basename: "aloha", prefix: "bonjour-", suffix: "-hola", extname: ".md" }
  *                      // output: some-where/bonjour-aloha-hola.md
