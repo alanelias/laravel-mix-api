@@ -190,6 +190,28 @@ Create **assets.json** [see documentaion](ASSETS.md)
 ]
 ```
 
+## gulp [see documentaion](ALIXIR.md) 
+
+start with:
+```
+gulp help
+```
+
+to view alixir config:
+```
+gulp config
+```
+
+list all your templates files:
+```
+gulp list --templates
+```
+
+list all your verion files:
+```
+gulp list --version
+```
+
 
 ## Authors
 
