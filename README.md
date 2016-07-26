@@ -7,10 +7,70 @@ Alixir is `npm package` built on top of elixer and gulp, its an easy cleaning so
 npm install alixir --save-dev
 ```
 
-### Usage ###
-**gulpfile.js:** 
+## Usage
+**gulpfile.js** 
 ```
 require('alixir');
+```
+
+Create **alixir.json** in the project root to override alixir config, setup files, filters and path 
+```
+{
+  "files": {
+    "styles": "/resources/assets/styles.json",
+    "scripts": "/resources/assets/scripts.json",
+    "assets": "/resources/assets/assets.json"
+  },
+  "filters": {
+    "%bower%": "vendor/bower_dl",
+    "%res_bower%": "../../../vendor/bower_dl"
+  },
+  "path": {
+    "version": {
+      "build": "public/build/",
+      "manifest": "public/build/rev-manifest.json"
+    },
+    "dist": {
+      "images": "public/images/",
+      "styles": "public/css/",
+      "scripts": "public/js/",
+      "fonts": "public/fonts/"
+    },
+    "assets": {
+      "images": "resources/assets/images/",
+      "styles": "resources/assets/sass/",
+      "scripts": "resources/assets/js/",
+      "fonts": "resources/assets/public/fonts/"
+    }
+  }
+}
+```
+
+Create **styles.json**  
+```
+[
+  {
+    "template": "app",
+    "required": true,
+    "files": [
+      {
+        "type": "sass",
+        "filesIn": "app.scss",
+        "version": "css/app.css"
+      }
+    ]
+  },
+  {
+    "template": "home",
+    "files": [
+      {
+        "type": "sass",
+        "filesIn": "pages/app-home.scss",
+        "version": "css/app-home.css"
+      }
+    ]
+  }
+]
 ```
 
 ### Install Packages With Bower ###
