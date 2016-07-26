@@ -24,13 +24,13 @@ npm install alixir --save-dev
 require('alixir');
 ```
 
-Create **alixir.json** in the project root to override alixir config, setup files, filters and path 
+Create **alixir.json** in the project root to override alixir config (files, filters and path) 
 ```
 {
   "files": {
-    "styles": "/resources/assets/styles.json",
-    "scripts": "/resources/assets/scripts.json",
-    "assets": "/resources/assets/assets.json"
+    "styles": "styles.json",
+    "scripts": "scripts.json",
+    "assets": "assets.json"
   },
   "filters": {
     "%bower%": "vendor/bower_dl",
@@ -83,6 +83,47 @@ Create **styles.json**
   }
 ]
 ```
+
+Create **scripts.json**  
+```
+[
+  {
+    "template": "app",
+    "files": [
+      {
+        "type": "scripts",
+        "filesIn": [
+          "common/variables.js",
+          "%res_bower%/jquery/dist/jquery.js",
+          "%res_bower%/jquery-ui/index.js",
+          "%res_bower%/bootstrap-sass/assets/javascripts/bootstrap.js",
+          "%res_bower%/vue/dist/vue.js",
+          "app.js"
+        ],
+        "fileOut": "public/js/app.js",
+        "version": "js/app.js"
+      }
+    ]
+  },
+  {
+    "template": "home",
+    "files": [
+      {
+        "type": "browserify",
+        "filesIn": [
+          "components/somelib.js",
+          "%res_bower%/package1/dist/js/script.js",
+          "%res_bower%/package2/source/main.js",
+          "pages/app-home.js"
+        ],
+        "fileOut": "public/js/app-home.js",
+        "version": "js/app-home.js"
+      }
+    ]
+  }
+]
+```
+
 
 ### Install Packages With Bower ###
 ```
