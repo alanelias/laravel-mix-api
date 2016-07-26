@@ -10,8 +10,7 @@ or
 gulp watch --template customer-service --css
 ```
 
-### The advantage of this package is breaking down all your project assets files
-### by filtering gulp and dealing with json files without editing gulp 
+#### The advantage of this package is breaking down all your project assets files by filtering gulp and dealing with json files without editing gulp 
 
 
 ## Installation ##
