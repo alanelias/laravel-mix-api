@@ -124,6 +124,72 @@ Create **scripts.json**
 ]
 ```
 
+Create **assets.json**
+```
+[
+  {
+    "package": "Bootstrap",
+    "files": [
+      {
+        "copy": {
+          "from": "%bower%/bootstrap-sass/assets/fonts/bootstrap/**",
+          "to": "public/fonts/bootstrap"
+        }
+      }
+    ]
+  },
+  {
+    "package": "Font Awesome",
+    "files": [
+      {
+        "copy": {
+          "from": "%bower%/font-awesome/fonts/**",
+          "to": "public/fonts/font-awesome"
+        }
+      }
+    ]
+  },
+  {
+    "package": "Toster",
+    "files": [
+      {
+        "copy": {
+          "from": "%bower%/toastr/toastr.css",
+          "rename": {
+            "extname": ".scss"
+          },
+          "to": "vendor/bower_dl/toastr/sass/"
+        }
+      }
+    ]
+  },
+  {
+    "package": "Slider Pro",
+    "files": [
+      {
+        "copy": {
+          "from": "%bower%/slider-pro/dist/css/slider-pro.css",
+          "replace": {
+            "find": "images/",
+            "with": "/images/slider-pro/"
+          },
+          "rename": {
+            "extname": ".scss"
+          },
+          "to": "vendor/bower_dl/slider-pro/dist/sass/"
+        }
+      },
+      {
+        "copy": {
+          "from": "%bower%/slider-pro/dist/css/images/**",
+          "to": "public/images/slider-pro/"
+        }
+      }
+    ]
+  }
+]
+```
+
 
 ### Install Packages With Bower ###
 ```
