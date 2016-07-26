@@ -57,7 +57,7 @@ Create **alixir.json** in the project root to override alixir config (files, fil
 }
 ```
 
-Create **styles.json**  
+Create **styles.json**  [see documentaion](STYLES.md)
 ```
 [
   {
@@ -84,7 +84,7 @@ Create **styles.json**
 ]
 ```
 
-Create **scripts.json**  
+Create **scripts.json**  [see documentaion](SCRIPTS.md)
 ```
 [
   {
@@ -124,7 +124,7 @@ Create **scripts.json**
 ]
 ```
 
-Create **assets.json**
+Create **assets.json** [see documentaion](ASSETS.md)
 ```
 [
   {
