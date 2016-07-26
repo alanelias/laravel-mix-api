@@ -207,7 +207,7 @@ list all your templates files:
 gulp list --templates
 ```
 
-list all your verion files:
+list all your version files:
 ```
 gulp list --version
 ```
