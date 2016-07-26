@@ -16,6 +16,10 @@ gulp watch --template customer-service --css
 **npm** 
 ```
 npm install alixir --save-dev
+
+npm install gulp --save-dev
+
+npm install laravel-elixir --save-dev
 ```
 
 ## Usage
