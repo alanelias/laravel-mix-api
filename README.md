@@ -212,6 +212,11 @@ list all your verion files:
 gulp list --version
 ```
 
+to run assets task which into assets.json file:
+```
+gulp assets
+```
+
 
 ## Authors
 
