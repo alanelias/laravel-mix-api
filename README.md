@@ -25,6 +25,7 @@ npm install laravel-elixir --save-dev
 ## Usage
 **gulpfile.js** 
 ```
+require('gulp');
 require('alixir');
 ```
 
