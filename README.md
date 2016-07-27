@@ -23,7 +23,7 @@ npm install laravel-elixir --save-dev
 
 **Note** if you have this error:
 `gulp-notify: [Laravel Elixir] Browserify Failed!: Couldn't find preset "es2015" relative to directory` 
-you can fixe it by installing the following packages:
+you can fix it by installing the following packages:
 ```
 npm install babel-preset-es2015 --save-dev
 npm install babel-preset-react --save-dev
