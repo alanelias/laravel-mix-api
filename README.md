@@ -11,18 +11,28 @@ or
 gulp watch --template customer-service --css
 ```
 
-
-## Installation ##
+## Installation 
 **npm**  
 ```
 npm install alixir --save-dev
 
-npm install gulp@">=0.1.0 <=3.9.1" --save-dev
+npm install gulp --save-dev
 
-npm install laravel-elixir@">=0.1.0 <=5.0.0" --save-dev
+npm install laravel-elixir --save-dev
 ```
 
+**Note** if you have this error:
+`gulp-notify: [Laravel Elixir] Browserify Failed!: Couldn't find preset "es2015" relative to directory` 
+you can fixe it by installing the following packages:
+```
+npm install babel-preset-es2015 --save-dev
+npm install babel-preset-react --save-dev
+```
 
+**Note** if you are using newer version of laravel-elixir v6 you might need to install the following package:
+```
+npm install laravel-elixir-browserify-official --save-dev
+```
 
 ## Usage
 **gulpfile.js** 
