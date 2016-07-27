@@ -1,5 +1,5 @@
 # Alixir | elixir-helper | laravel-elixir-helper
-Alixir is `npm package` built on top of elixer and gulp, its an easy cleaning solution to CSS / JS mess. Giving you a nice clean structure for organizing all your sites assets whether it is images, javascript files, or stylesheets and keeps the power of SASS, Browserify, versioning at your fingertips in simple commands you might already be familiar with.
+Alixir is `npm package` built on top of elixir and gulp, its an easy cleaning solution to CSS / JS mess. Giving you a nice clean structure for organizing all your sites assets whether it is images, javascript files, or stylesheets and keeps the power of SASS, Browserify, versioning at your fingertips in simple commands you might already be familiar with.
 **The advantage of this package is breaking down all your project assets files as templates by filtering gulp and dealing with json files without editing gulp** 
 
 ## You can use this:
