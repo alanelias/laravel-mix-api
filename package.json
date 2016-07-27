@@ -16,8 +16,6 @@
   ],
 
   "dependencies": {
-    "gulp": "^3.9.1",
-    "laravel-elixir": "^5.0.0",
     "gulp-clean": "^0.3.2",
     "del": "^2.2.1",
     "gulp-color": "0.0.1",
