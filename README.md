@@ -31,7 +31,7 @@ require('alixir');
 ```
 
 Create **alixir.json** in the project root to override alixir config (files, filters and path) [see documentaion](ALIXIR.md) 
-```
+```json
 {
   "files": {
     "styles": "styles.json",
@@ -64,7 +64,7 @@ Create **alixir.json** in the project root to override alixir config (files, fil
 ```
 
 Create **styles.json**  [see documentaion](STYLES.md)
-```
+```json
 [
   {
     "template": "app",
@@ -91,7 +91,7 @@ Create **styles.json**  [see documentaion](STYLES.md)
 ```
 
 Create **scripts.json**  [see documentaion](SCRIPTS.md)
-```
+```json
 [
   {
     "template": "app",
@@ -131,7 +131,7 @@ Create **scripts.json**  [see documentaion](SCRIPTS.md)
 ```
 
 Create **assets.json** [see documentaion](ASSETS.md)
-```
+```json
 [
   {
     "package": "Bootstrap",
