@@ -30,7 +30,7 @@ npm install laravel-elixir@">=0.1.0 <=5.0.0" --save-dev
 require('alixir');
 ```
 
-Create **alixir.json** in the project root to override alixir config (files, filters and path) [see documentaion](ALIXIR.md) 
+Create **alixir.json** in the project root dir to override alixir config (files, filters and path) [see documentaion](ALIXIR.md) 
 ```json
 {
   "files": {
