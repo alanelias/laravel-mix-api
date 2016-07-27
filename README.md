@@ -14,7 +14,9 @@ gulp watch --template customer-service --css
 
 ## Installation ##
 gulp ~ ^3.9.1 
+
 laravel-elixir ~ ^5.0.0
+
 **npm**  
 ```
 npm install alixir --save-dev
