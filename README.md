@@ -196,7 +196,8 @@ Create **assets.json** [see documentaion](ASSETS.md)
 ]
 ```
 
-## gulp [see documentaion](GULP.md) 
+## gulp commands and flags
+[see documentaion](GULP.md) 
 
 start with:
 ```
