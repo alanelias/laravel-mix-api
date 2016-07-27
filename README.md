@@ -196,7 +196,34 @@ Create **assets.json** [see documentaion](ASSETS.md)
 ]
 ```
 
-## gulp commands and flags
+# Break down laravel assets
+[see documentaion](LARAVEL.md)
+Main project css file witch is `app.css`
+```blade
+<link href="{!!  \App\Helpers\AssetsHelper::elixir('css/app.css')  !!}" rel="stylesheet" />
+```
+
+To get `first or second route` css file your-website.com/`%first-route%`/*
+```blade
+{!! \App\Helpers\AssetsHelper::pageStyle() !!}
+```
+
+To create page css `class` in each page
+```blade
+<body class="{{ \App\Helpers\AssetsHelper::segmentsAsClass() }}">
+```
+
+Main project js file which is `app.js`
+```blade
+<script src="{!!  \App\Helpers\AssetsHelper::elixir('js/app.js')  !!}"></script>
+```
+
+To get `first or second route` js file your-website.com/`%first-route%`/*
+```blade
+{!! \App\Helpers\AssetsHelper::pageScript() !!}
+```
+
+# gulp commands and flags
 [see documentaion](GULP.md) 
 
 start with:
