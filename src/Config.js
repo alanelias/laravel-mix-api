@@ -1,4 +1,4 @@
-var env = require('gulp-env'),
+var gutil = require('gulp-util'),
     color = require('gulp-color'),
     PROJECT_DIR = process.cwd();
 
@@ -74,17 +74,15 @@ try {
 
 package_config = MergeRecursive(package_config, override_package_config);
 
-var env_config =  process.env.ALIXIR_CONFIG;
-if(env_config){
-    package_config = MergeRecursive(package_config, env_config);
+var gunit_config = gutil.env.ALIXIR_CONFIG;
+if(gunit_config){
+    package_config = MergeRecursive(package_config, gunit_config);
 }
 
 package_config.other.RegExp = new RegExp(Object.keys(package_config.filters).join("|"),"gi");
 
 
-//gutil.env.ALIXIER_CONFIG =  package_config;
-
-env({ ALIXIR_CONFIG: package_config });
+gutil.env.ALIXIR_CONFIG =  package_config;
 
 /**
  *
