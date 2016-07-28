@@ -10,6 +10,64 @@ or
 ```
 gulp watch --template customer-service --css
 ```
+or
+```
+gulp watch --css
+```
+
+**Project**
+```
+│
+├───/public/
+│   │ 
+│   ├───/build/
+│   ├───/css/
+│   │   ├───app.css
+│   │   ├───app-home.css
+│   │   └───app-customer-service.css
+│   ├───/js/
+│   │   ├───app.js
+│   │   ├───app-home.js
+│   │   └───app-customer-service.js
+│   ├───/fonts/
+│   │   ├───/font-awesome/
+│   │   ├───/bootstrap/
+│   │   └───/custom/
+│   └───/images/
+│       ├───/package1/
+│       ├───/package2/
+│       └───/package3/
+│
+├───/resources/
+│   ├───/assets/
+│   │   │
+│   │   ├────/js/
+│   │   │    ├────/common/
+│   │   │    ├────/pages/ 
+│   │   │    ├────app.js
+│   │   │    ├────app-global.js
+│   │   │    └────app-admin.js
+│   │   │ 
+│   │   ├────/sass/
+│   │   │    ├────/common/ 
+│   │   │    ├────/layouts/
+│   │   │    ├────/pages/
+│   │   │    └────app.scss 
+│   │   │ 
+│   │   ├────styles.json (styles tasks --css)
+│   │   │ 
+│   │   ├────scripts.json (scripts tasks --js)
+│   │   │ 
+│   │   └────assets.json (assets tasks)
+│   │   
+│   └───/views/
+│      
+├───package.json
+├───alixir.json (override package config)
+├───gulpfile.js
+│
+
+```
 
 ## Installation 
 **npm**  
