@@ -75,7 +75,7 @@ try {
 package_config = MergeRecursive(package_config, override_package_config);
 
 var gunit_config = gutil.env.ALIXIR_CONFIG;
-if(gunit_config){
+if(typeof (gunit_config) !== "undefined"){
     package_config = MergeRecursive(package_config, gunit_config);
 }
 
