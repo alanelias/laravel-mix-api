@@ -19,9 +19,8 @@
  */
 
 
-var gutil = require('gulp-util'),
-    color = require('gulp-color'),
-    config = gutil.env.ALIXIER_CONFIG;
+var color = require('gulp-color'),
+    config = process.env.ALIXIR_CONFIG;
 
 
 var tasks = [];

@@ -1,4 +1,4 @@
-var gutil = require('gulp-util'),
+var env = require('gulp-env'),
     color = require('gulp-color'),
     PROJECT_DIR = process.cwd();
 
@@ -66,7 +66,7 @@ var package_config = {
 var override_package_config = {};
 
 try {
-    var override_package_config = require(package_config.path.project + package_config.files.config);
+    override_package_config = require(package_config.path.project + package_config.files.config);
 }catch (err){
     // do nothing
     console.log(color("Note: there is no " + package_config.files.config, "YELLOW"));
@@ -74,15 +74,17 @@ try {
 
 package_config = MergeRecursive(package_config, override_package_config);
 
-var gunit_config = gutil.env.ALIXIER_CONFIG;
-if(gunit_config){
-    package_config = MergeRecursive(package_config, gunit_config);
+var env_config =  process.env.ALIXIR_CONFIG;
+if(env_config){
+    package_config = MergeRecursive(package_config, env_config);
 }
 
 package_config.other.RegExp = new RegExp(Object.keys(package_config.filters).join("|"),"gi");
 
 
-gutil.env.ALIXIER_CONFIG =  package_config;
+//gutil.env.ALIXIER_CONFIG =  package_config;
+
+env({ ALIXIR_CONFIG: package_config });
 
 /**
  *
