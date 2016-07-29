@@ -360,9 +360,9 @@ gulp.task("help", function () {
  * gulp clean files
  */
 gulp.task("clean", function (cb) {
-    if(argv.version) {
+    if(argv.build) {
         cleanBuildFolder(cb);
-    }else if(argv.build){
+    }else if(argv.dist){
         cleanPublicFolder(cb);
     }else {
         cleanPublicFolder(cb);
