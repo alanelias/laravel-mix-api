@@ -18,7 +18,7 @@ Compile only js files without version and minify, and export them to public fold
 gulp watch --template templatename --js
 ```
 
-Compile only css files without version and minify, and export them to public folder and exclude all except templatename and exclude all css files except css by using --css 
+Compile only css files without version and minify, and export them to public folder and exclude all except templatename and exclude all js files except css by using --css 
 ```
 gulp --template templatename --css
 ```
