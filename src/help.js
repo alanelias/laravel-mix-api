@@ -83,17 +83,17 @@ module.exports = {
         // gulp --production
         console.log("-> " + color("gulp --production ", "RED") +
             color("( compile " + color("js and css", highlightColor) + " files " + color("with version and minify", highlightColor) +
-                ", and export them to public folder and into " + color("public/build/ with rev-manifest.json ", highlightColor) + ")", "WHITE"));
+                ", and export them to public folder and into " + color("build/ with rev-manifest.json ", highlightColor) + ")", "WHITE"));
 
         // gulp --production --css
         console.log("-> " + color("gulp --production --css ", "RED") +
             color("( compile " + color("only css", highlightColor) + " files " + color("with version and minify", highlightColor) +
-                ", and export them to public folder and into " + color("public/build/ with rev-manifest.json ", highlightColor) + ")", "WHITE"));
+                ", and export them to public folder and into " + color("build/ with rev-manifest.json ", highlightColor) + ")", "WHITE"));
 
         // gulp --production --js
         console.log("-> " + color("gulp --production --js ", "RED") +
             color("( compile " + color("only js", highlightColor) + " files " + color("with version and minify", highlightColor) +
-                ", and export them to public folder and into " + color("public/build/ with rev-manifest.json ", highlightColor) + ")", "WHITE"));
+                ", and export them to public folder and into " + color("build/ with rev-manifest.json ", highlightColor) + ")", "WHITE"));
 
         // divider
         console.log(color(divider, dividerColor));
@@ -121,7 +121,7 @@ module.exports = {
 
         // gulp clean --build
         console.log("-> " + color("gulp clean --build ", "RED") +
-            color("( clean all " + color("public/build version files ", highlightColor) + "and" + color(" rev-manifest.json", highlightColor)  + " )", "WHITE"));
+            color("( clean all " + color("build version files ", highlightColor) + "and" + color(" rev-manifest.json", highlightColor)  + " )", "WHITE"));
 
         // gulp clean --public
         console.log("-> " + color("gulp clean --dist ", "RED") +

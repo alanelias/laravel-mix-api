@@ -331,7 +331,7 @@ gulp assets
 
 ## Authors
 
-* **Alan Elias** - *Initial work* - [AlanElias](https://github.com/AlanElias)
+* **Alan Elias** - *Initial work* - [GitHub](https://github.com/AlanElias) | [LinkedIn](https://www.linkedin.com/in/alanwelias)
 
 
 ## License

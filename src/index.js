@@ -414,6 +414,14 @@ gulp.task("config", function () {
     console.log(color("Config: ", "GREEN") + JSON.stringify(config, null, 4));
 });
 
+/**
+ * gulp about
+ */
+gulp.task("about", function () {
+    var about = require('./about.js');
+    about.show();
+});
+
 
 
 
