@@ -117,19 +117,19 @@ module.exports = {
 
         // gulp clean
         console.log("-> " + color("gulp clean ", "RED") +
-            color("( clean all " + color("public/ files ", highlightColor) + "css/js" + color(" with public/build files and rev-manifest.json", highlightColor)  + " )", "WHITE"));
+            color("( clean all " + color("dist/ files ", highlightColor) + "css/js" + color(" with build/ files and rev-manifest.json", highlightColor)  + " )", "WHITE"));
 
         // gulp clean --build
         console.log("-> " + color("gulp clean --build ", "RED") +
             color("( clean all " + color("public/build version files ", highlightColor) + "and" + color(" rev-manifest.json", highlightColor)  + " )", "WHITE"));
 
         // gulp clean --public
-        console.log("-> " + color("gulp clean --public ", "RED") +
-            color("( clean all " + color("public/ files", highlightColor) + " css/js " + color("without public/build", highlightColor) + " )" , "WHITE"));
+        console.log("-> " + color("gulp clean --dist ", "RED") +
+            color("( clean all " + color("dist/ files", highlightColor) + " css/js " + color("without build files", highlightColor) + " )" , "WHITE"));
 
         // gulp clean --all
         console.log("-> " + color("gulp clean --all ", "RED") +
-            color("( clean all " + color("public/ files", highlightColor) + " css/js/fonts " + color("with public/build files and rev-manifest.json", highlightColor)  + " )", "WHITE"));
+            color("( clean all " + color("dist/ files", highlightColor) + " css/js/fonts " + color("with build files including rev-manifest.json", highlightColor)  + " )", "WHITE"));
 
         // divider
         console.log(color(divider, dividerColor));

@@ -86,10 +86,19 @@ you can fix it by installing the following packages:
 npm install babel-preset-es2015 --save-dev
 npm install babel-preset-react --save-dev
 ```
+**Note** `production` usage you can install all required packages with `--save` for production 
 
 **Note** if you are using newer version of laravel-elixir v6 you might need to install the following package:
 ```
 npm install laravel-elixir-browserify-official --save-dev
+```
+
+**Note** if you have any problems with files permissions you can run `sudo` on mac  
+ 
+**On Deploy** run the following commands: 
+```
+gulp assets
+gulp --production
 ```
 
 ## Usage

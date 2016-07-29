@@ -3,12 +3,44 @@
 
 # assets.json
 
+Some packages doesn't support sass or less so by using assets you can search and replace path string inside js or css file e.g:
+move the package images to your project public folder `public/images/package-name/`
+and then do search and replace for images path in the css file (find `images/` replace with `/images/package-name/`) and save the file in different dir inside the package folder to be instead `css/` to `sass/` and then `@import "....../package-name/sass/styles.scss";` import to app.scss or any where you want
+```json
+[
+  {
+    "package": "Slider Pro",
+    "files": [
+      {
+        "copy": {
+          "from": "%bower%/slider-pro/dist/css/slider-pro.css",
+          "replace": {
+            "find": "images/",
+            "with": "/images/slider-pro/"
+          },
+          "rename": {
+            "extname": ".scss"
+          },
+          "to": "vendor/bower_dl/slider-pro/dist/sass/"
+        }
+      },
+      {
+        "copy": {
+          "from": "%bower%/slider-pro/dist/css/images/**",
+          "to": "public/images/slider-pro/"
+        }
+      }
+    ]
+  }
+]
+```
 
+###Please read below:
 ```
 /**
  *  Documentation
  *
- *  tasks: [
+ * [
  *      {
  *          package: "package-name", // template name use to describe the package object
  *          files: [
@@ -39,7 +71,7 @@
  *          ]
  *      },
  *     {
- *          package: "Bootstrap", // copying bootstap fonts e.g
+ *          package: "Bootstrap", // copying bootstrap fonts e.g
  *          files: [
  *              {
  *                  copy: {
@@ -53,4 +85,4 @@
  */
 ```
 
-[Back to main README](README.md)
+[Go Back](README.md)

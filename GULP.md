@@ -2,45 +2,127 @@
 
 # Alixir Commands
 
-
+##gulp:
+Compile js and css files without version and minify, and export them to public folder
 ```
-Gulp:
--> gulp ( compile js and css files without version and minify, and export them to public folder )
--> gulp --template templatename ( compile js and css files without version and minify, and export them to public folder and exclude all except templatename)
--> gulp watch --template templatename --js ( compile only js files without version and minify, and export them to public folder and exclude all except templatename and exclude all css files except js by using --js )
--> gulp --template templatename --css ( compile only css files without version and minify, and export them to public folder and exclude all except templatename and exclude all css files except js by using --css )
--> gulp --images ( compile js, css and images files without version and minify, and export them to public folder , by using --images adds images task to gulp
--------------------------------------------------------------------------------------------------------------------------
-Gulp Watch:
--> gulp watch ( watch and compile js and css files without version and minify, and export them to public folder )
--> gulp watch --template templatename ( watch and compile js and css files without version and minify, and export them to public folder and exclude all except templatename)
--> gulp watch --template templatename --js ( watch and compile only js files without version and minify, and export them to public folder and exclude all except templatename and exclude all css files except js by using --js )
--> gulp watch --template templatename --css ( watch and compile only css files without version and minify, and export them to public folder and exclude all except templatename and exclude all css files except js by using --css )
--> gulp watch --images ( watch and compile js, css and images files without version and minify, and export them to public folder , by using --images adds images task to gulp
--------------------------------------------------------------------------------------------------------------------------
-Gulp Production:
--> gulp --production ( compile js and css files with version and minify, and export them to public folder and into public/build/ with rev-manifest.json )
--> gulp --production --css ( compile only css files with version and minify, and export them to public folder and into public/build/ with rev-manifest.json )
--> gulp --production --js ( compile only js files with version and minify, and export them to public folder and into public/build/ with rev-manifest.json )
--------------------------------------------------------------------------------------------------------------------------
-Gulp List:
--> gulp list --templates ( list of all templates names with command usage )
--> gulp list --version ( list of all templates names with version files )
--------------------------------------------------------------------------------------------------------------------------
-Gulp Clean:
--> gulp clean ( clean all public/ files css/js with public/build files and rev-manifest.json )
--> gulp clean --build ( clean all public/build version files and rev-manifest.json )
--> gulp clean --public ( clean all public/ files css/js without public/build )
--> gulp clean --all ( clean all public/ files css/js/fonts with public/build files and rev-manifest.json )
--------------------------------------------------------------------------------------------------------------------------
-Gulp Assets:
--> gulp assets ( runs gulpbower.js tasks, copying fonts, images, search-replace on required files from bower packages folder to public folder )
--------------------------------------------------------------------------------------------------------------------------
-Gulp Notification:
--> gulp --notify stop( adding --notify stop, disables gulp notifications on all commands
--------------------------------------------------------------------------------------------------------------------------
-Config:
--> gulp config  view alixir config json file.
+gulp
 ```
 
-[Back to main README](README.md)
+Compile js and css files without version and minify, and export them to public folder and exclude all except templatename
+```
+gulp --template templatename
+```
+
+Compile only js files without version and minify, and export them to public folder and exclude all except templatename and exclude all css files except js by using --js
+```
+gulp watch --template templatename --js
+```
+
+Compile only css files without version and minify, and export them to public folder and exclude all except templatename and exclude all css files except js by using --css 
+```
+gulp --template templatename --css
+```
+
+Compile js, css and images files without version and minify, and export them to public folder , by using --images adds images task to gulp 
+```
+gulp --images
+```
+
+##gulp watch:
+
+
+Watch and compile js and css files without version and minify, and export them to public folder 
+```
+gulp watch
+```
+
+Watch and compile js and css files without version and minify, and export them to public folder and exclude all except templatename 
+```
+gulp watch --template templatename
+```
+
+Watch and compile only js files without version and minify, and export them to public folder and exclude all except templatename and exclude all css files except js by using --js 
+```
+gulp watch --template templatename --js
+```
+
+Watch and compile only css files without version and minify, and export them to public folder and exclude all except templatename and exclude all css files except js by using --css 
+```
+gulp watch --template templatename --css
+```
+
+Watch and compile js, css and images files without version and minify, and export them to public folder , by using --images adds images task to gulp 
+```
+gulp watch --images
+```
+
+##gulp production:
+
+
+Compile js and css files with version and minify, and export them to public folder and into public/build/ with rev-manifest.json
+```
+gulp --production
+```
+
+Compile only css files with version and minify, and export them to public folder and into public/build/ with rev-manifest.json 
+```
+gulp --production --css
+```
+
+Compile only js files with version and minify, and export them to public folder and into public/build/ with rev-manifest.json
+```
+gulp --production --js
+```
+
+
+##gulp list:
+List of all templates names with usage command 
+```
+gulp list --templates
+```
+
+List of all templates names with version files
+```
+list --version
+```
+
+##gulp clean:
+Clean all dist/ files css/js with build/ files and rev-manifest.json
+```
+gulp clean
+```
+
+Clean all build version files and rev-manifest.json
+```
+gulp clean --build
+```
+
+Clean all dist files css/js without build
+```
+gulp clean --dist
+```
+
+Clean all dist files css/js/fonts/images with build files including rev-manifest.json
+```
+gulp clean --all
+```
+
+##gulp assets:
+Runs gulpbower.js tasks, copying fonts, images, search-replace on required files from bower packages folder to public folder
+```
+gulp assets
+```
+
+##notifications:
+Adding --notify stop, disables gulp notifications on all commands
+```
+gulp --notify stop
+```
+
+##config:
+View alixir config json file.
+```
+gulp config
+```
+
+[Go Back](README.md)
