@@ -1,7 +1,7 @@
 var color = require('gulp-color');
 
 /**
- *  it log out all gulp help guides
+ *  about Alixir
  * @type {{show: module.exports.show}}
  */
 module.exports = {
