@@ -44,7 +44,7 @@ then add this to `gulpfile.js`
 ```javascript
 var gutil = require('gulp-util');
 
-gutil.env.ALIXIER_CONFIG = {
+gutil.env.ALIXIR_CONFIG = {
     "files": {
         "styles": "resources/assets/styles.json",
         "scripts": "resources/assets/scripts.json",
@@ -102,7 +102,7 @@ By Default: `"chmod": "off"`
 or
 ```javascript
 // work with javascript
-gutil.env.ALIXIER_CONFIG = {
+gutil.env.ALIXIR_CONFIG = {
   other: { 
     chmod: {
       owner: {
