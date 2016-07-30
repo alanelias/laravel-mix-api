@@ -1,5 +1,5 @@
 
-## override config
+## Override Config
 there are two ways to override config file. 
 
 **1.** Create **alixir.json** in the project root dir to override alixir config (files, filters and path) 
