@@ -137,5 +137,28 @@ gutil.env.ALIXIR_CONFIG = {
 }
 ```
 
+## Switch from json to js
+
+if you like using javascript instead json you can override files names also:
+ 
+```json
+{
+  "files": {
+    "styles": "resources/assets/styles.js",
+    "scripts": "resources/assets/scripts.js",
+    "assets": "resources/assets/assets.js"
+  }
+}
+```
+and then create the files and in each one add this:
+```javascript
+var tasks = [
+    // here is your tasks javascript object instead json
+    // {name: "value"} instead {"name": "value"}
+    // or you can try both
+];
+module.exports =  tasks;
+```
+
 
 [Go Back](README.md)
