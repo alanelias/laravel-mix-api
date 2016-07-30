@@ -57,7 +57,8 @@ var package_config = {
     },
     other: {
         DISABLE_NOTIFIER: false,
-        RegExp: null
+        RegExp: null,
+        chmod: 666
     },
     filters:{}
 
@@ -74,9 +75,9 @@ try {
 
 package_config = MergeRecursive(package_config, override_package_config);
 
-var gunit_config = gutil.env.ALIXIR_CONFIG;
+var gutil_config = gutil.env.ALIXIR_CONFIG;
 if(typeof (gunit_config) !== "undefined"){
-    package_config = MergeRecursive(package_config, gunit_config);
+    package_config = MergeRecursive(package_config, gutil_config);
 }
 
 package_config.other.RegExp = new RegExp(Object.keys(package_config.filters).join("|"),"gi");

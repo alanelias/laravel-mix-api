@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     // Task Yargs Flags Manager
     argv = require('yargs').argv,
     gutil = require('gulp-util'),
+    chmod = require('gulp-chmod'),
     /* Load Config */
     config = require('./Config.js');
 
@@ -190,6 +191,7 @@ function applyGulpassetsTasks(obj, index, array) {
         this.src(copy_from_path)
             .pipe(typeof(obj.copy.replace) != 'undefined' ? replace(obj.copy.replace.find, obj.copy.replace.with) : gutil.noop())
             .pipe(typeof(obj.copy.rename) != 'undefined' ? rename(obj.copy.rename) : gutil.noop())
+            .pipe((typeof(config.other.chmod) == 'number') ? chmod(config.other.chmod) : gutil.noop())
             .pipe(this.dest(applyPathFilter(copy_to_path)));
 
         var logName = "Copy";

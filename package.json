@@ -39,7 +39,7 @@
     "gulp-color": "0.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
-    "gulp-util": "^3.0.7",
+    "gulp-chmod": "^1.3.0",
     "task-yargs": "^0.1.5",
     "yargs": "^4.7.1",
     "laravel-elixir-browserify-official": "^0.1.3",

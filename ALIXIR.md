@@ -88,6 +88,15 @@ require("alixir");
 }
 ```
 
+**chmod:** if you have problem with permissions when you run `gulp assets` and you are using already `bower` or other package required some times `sudo` on `mac` you can override chmod settings and run `sudo gulp assets` without any problem:
+```json
+{
+  "other": {
+    "chmod": 666
+  }
+}
+```
+
 **Elixir Notifications:** some people don't like elixir notifications so you can turn it off allways by adding this:
 
 ```json

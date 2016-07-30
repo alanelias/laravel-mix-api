@@ -72,11 +72,13 @@ gulp watch --css
 ## Installation 
 **npm**  
 ```
-npm install alixir --save-dev
-
 npm install gulp --save-dev
 
+npm install gulp-util --save-dev
+
 npm install laravel-elixir --save-dev
+
+npm install alixir --save-dev
 ```
 
 **Note** if you have this error:
