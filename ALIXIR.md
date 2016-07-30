@@ -92,6 +92,7 @@ require("alixir");
 
 By Default: `"chmod": "off"`
 ```json
+// work with both javascript and json
 {
   "other": {
     "chmod": 666
@@ -99,24 +100,25 @@ By Default: `"chmod": "off"`
 }
 ```
 or
-```json
-{
-  "other": {
-    "chmod": {
-      "owner": {
-        "read": true,
-        "write": true,
-        "execute": true
+```javascript
+// work with javascript
+gutil.env.ALIXIER_CONFIG = {
+  other: { 
+    chmod: {
+      owner: {
+        read: true,
+        write: true,
+        execute: true
       },
-      "group": {
-        "execute": true
+      group: {
+        execute: true
       },
-      "others": {
-        "execute": true
+      others: {
+        execute: true
       }
     }
   }
-}
+};
 ```
 **Related:** https://github.com/sindresorhus/gulp-chmod 
 
