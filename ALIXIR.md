@@ -5,32 +5,37 @@ there are two ways to override config file.
 **1.** Create **alixir.json** in the project root dir to override alixir config (files, filters and path) 
 ```json
 {
-  "files": {
-    "styles": "styles.json",
-    "scripts": "scripts.json",
-    "assets": "assets.json"
-  },
-  "filters": {
-    "%bower%": "vendor/bower_dl",
-    "%res_bower%": "../../../vendor/bower_dl"
-  },
   "path": {
     "version": {
       "build": "public/build/",
       "manifest": "public/build/rev-manifest.json"
+    },
+    "dist": {
+      "images": "public/images/",
+      "styles": "public/css/",
+      "scripts": "public/js/",
+      "fonts": "public/fonts/"
+    },
+    "assets": {
+      "images": "resources/assets/images/",
+      "styles": "resources/assets/sass/",
+      "scripts": "resources/assets/js/",
+      "fonts": "resources/assets/public/fonts/"
     }
   },
-  "dist": {
-    "images": "public/images/",
-    "styles": "public/css/",
-    "scripts": "public/js/",
-    "fonts": "public/fonts/"
+  "files": {
+    "config": "alixir.json",
+    "styles": "resources/assets/styles.json",
+    "scripts": "resources/assets/scripts.json",
+    "assets": "resources/assets/assets.json"
   },
-  "assets": {
-    "images": "resources/assets/images/",
-    "styles": "resources/assets/sass/",
-    "scripts": "resources/assets/js/",
-    "fonts": "resources/assets/public/fonts/"
+  "other": {
+    "DISABLE_NOTIFIER": false,
+    "chmod": "off"
+  },
+  "filters": {
+    "%bower%": "vendor/bower_dl",
+    "%res_bower%": "../../../vendor/bower_dl"
   }
 }
 ```

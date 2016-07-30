@@ -35,6 +35,19 @@ and then do search and replace for images path in the css file (find `images/` r
 ]
 ```
 
+**Note** to publish `/resources/assets/images` to `/public/images` you can add task to `assets.json` so every time you run assets you publish your images or you can run `gulp --images` or `gulp watch --images` in case your adding images consistently, with running `gulp --production` it publish images by default, you can also change the default folder which is `/resources/assets/images` to any path you want by overriding config:
+ 
+```json
+{
+  "path": {
+    "assets": {
+      "images": "resources/assets/images/"
+    }
+  }
+}
+```
+[see documentation](ALIXIR.md) about overriding config
+
 ###Please read below:
 ```
 /**
