@@ -19,7 +19,13 @@
     "templates",
     "javascript",
     "ES6",
-    "gulpfriendly"
+    "gulpfriendly",
+    "CMS",
+    "wordpress",
+    "drupal",
+    "angular.js",
+    "vuejs",
+    "react.js"
   ],
   "main": "src/index.js",
   "author": "Alan Elias",
