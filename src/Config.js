@@ -66,19 +66,23 @@ var package_config = {
 
 var override_package_config = {};
 
-try {
-    override_package_config = require(package_config.path.project + package_config.files.config);
-}catch (err){
-    // do nothing
-    console.log(color("Note: there is no " + package_config.files.config, "YELLOW"));
+override_package_config = gutil.env.ALIXIR_CONFIG;
+
+if(typeof (override_package_config) === "undefined"){
+
+    try {
+        override_package_config = require(package_config.path.project + package_config.files.config);
+    }catch (err){
+        // do nothing
+        console.log(color("Something went wrong there is no "
+            + package_config.files.config + " or the json file contains errors!", "YELLOW"));
+        console.log(color(err, "RED"));
+    }
+
 }
 
 package_config = MergeRecursive(package_config, override_package_config);
 
-var gutil_config = gutil.env.ALIXIR_CONFIG;
-if(typeof (gutil_config) !== "undefined"){
-    package_config = MergeRecursive(package_config, gutil_config);
-}
 
 package_config.other.RegExp = new RegExp(Object.keys(package_config.filters).join("|"),"gi");
 
