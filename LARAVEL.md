@@ -76,7 +76,7 @@ http://your-website.com/dashboard/products/
 ```
 Use this for less or sass:
 ```scss
-// the file would be in pages/dashboard/products
+// the file would be pages/dashboard/products
 body.dashboard-products {
     // styles here
 }
@@ -88,7 +88,7 @@ http://your-website.com/dashboard/products/25546/
 ```
 You can use this for sass or less:
 ```scss
-// the file would be in pages/dashboard/products/single-product
+// the file would be pages/dashboard/products/single-product
 body[class^="dashboard-products-"], div[class*=" dashboard-products-"] {
     // styles here
 }
