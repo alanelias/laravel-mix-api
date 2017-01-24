@@ -1,5 +1,5 @@
-# Alixir | elixir-helper | laravel-elixir-helper
-Alixir is `npm package` built on top of elixir and gulp, its an easy cleaning solution to CSS / JS mess. Giving you a nice clean structure for organizing all your sites assets whether it is images, javascript files, or stylesheets and keeps the power of SASS, Browserify, versioning at your fingertips in simple commands you might already be familiar with.
+# laravel-mix-api
+laravel-mix-api is `npm package` built on top of laravel-mix and gulp, its an easy cleaning solution to CSS / JS mess. Giving you a nice clean structure for organizing all your sites assets whether it is images, javascript files, or stylesheets and keeps the power of SASS, Browserify, versioning at your fingertips in simple commands you might already be familiar with.
 **The advantage of this package is breaking down all your project assets files as templates by filtering gulp and dealing with json files without editing gulp** 
 
 ## You can use this:
@@ -63,7 +63,7 @@ gulp watch --css
 │   └───/views/
 │      
 ├───package.json
-├───alixir.json (override package config)
+├───mix-api.json (override package config - optional)
 ├───gulpfile.js
 │
 
@@ -72,28 +72,15 @@ gulp watch --css
 ## Installation 
 **npm**  
 ```
-npm install gulp --save-dev
+npm install gulp --save
 
-npm install gulp-util --save-dev
+npm install gulp-util --save
 
-npm install laravel-elixir --save-dev
+npm install laravel-mix --save
 
-npm install alixir --save-dev
+npm install laravel-mix-api --save
 ```
 
-**Note** if you have this error:
-`gulp-notify: [Laravel Elixir] Browserify Failed!: Couldn't find preset "es2015" relative to directory` 
-you can fix it by installing the following packages:
-```
-npm install babel-preset-es2015 --save-dev
-npm install babel-preset-react --save-dev
-```
-**Note** `production` usage you can install all required packages with `--save` for production 
-
-**Note** if you are using newer version of laravel-elixir v6 you might need to install the following package:
-```
-npm install laravel-elixir-browserify-official --save-dev
-```
 
 **Note** if you have any problems with files permissions you can run `sudo` on mac  
  
@@ -106,10 +93,10 @@ gulp --production
 ## Usage
 **gulpfile.js** 
 ```
-require('alixir');
+require('laravel-mix-api');
 ```
 
-Create **alixir.json** in the project root dir to override alixir config (files, filters and path) [see documentaion](ALIXIR.md) 
+Create **mix-api.json** in the project root dir to override laravel-mix-api config (files, filters and path) [see documentaion](CONFIG.md) 
 ```json
 {
   "files": {
@@ -310,7 +297,7 @@ start with:
 gulp help
 ```
 
-to view alixir config:
+to view mix-api config:
 ```
 gulp config
 ```

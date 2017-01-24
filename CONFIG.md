@@ -2,7 +2,7 @@
 ## override config
 there are two ways to override config file. 
 
-**1.** Create **alixir.json** in the project root dir to override alixir config (files, filters and path) 
+**1.** Create **mix-api.json** in the project root dir to override laravel-mix-api config (files, filters and path) 
 ```json
 {
   "path": {
@@ -62,7 +62,7 @@ gutil.env.ALIXIR_CONFIG = {
     }
 };
 
-require("alixir");
+require("laravel-mix-api");
 ```
 
 
