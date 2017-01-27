@@ -28,7 +28,7 @@ class Help {
         console.log(color("Compile:", this.colors.title));
 
         // npm run dev
-        console.log("-> " + color("npm run dev ", this.colors.subText) +
+        console.log("-> " + color("npm run dev -- api", this.colors.subText) +
             color("( compiles " + color("js and css", this.colors.highlight) + " files " + color("without version and minify", this.colors.highlight) + ", and export them to public folder )", this.colors.text));
 
         // npm run dev -- api="templates:template1,template2"
@@ -55,7 +55,7 @@ class Help {
         console.log(color("Watch:", this.colors.title));
 
         // npm run watch
-        console.log("-> " + color('npm run watch ', this.colors.subText) +
+        console.log("-> " + color('npm run watch -- api', this.colors.subText) +
             color("( watchs and compiles " + color("js and css", this.colors.highlight) + " files " + color("without version and minify", this.colors.highlight) +
                 ", and export them to public folder )", this.colors.text));
 
@@ -83,7 +83,7 @@ class Help {
         console.log(color("Production:", this.colors.title));
 
         // npm run production -- api="templates:template1,template2"
-        console.log("-> " + color("npm run production ", this.colors.subText) +
+        console.log("-> " + color("npm run production -- api", this.colors.subText) +
             color("( compiles " + color("js and css", this.colors.highlight) + " files " + color("with version and minify", this.colors.highlight) +
                 ", and export them to public folder )", this.colors.text));
 
