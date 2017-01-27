@@ -1,168 +1,227 @@
-var color = require('gulp-color');
+let color = require('gulp-color');
 
-/**
- *  it log out all gulp help guides
- * @type {{show: module.exports.show}}
- */
-module.exports = {
-    show: function () {
-
-        var highlightColor = "GREEN";
-        var divider = "-------------------------------------------------------------------------------------------------------------------------";
-        var dividerColor = "YELLOW";
-        var titleColor = "WHITE";
-
-        // gulp
-        console.log(color("Gulp:", titleColor));
-
-        // gulp
-        console.log("-> " + color("gulp ", "RED") +
-            color("( compile " + color("js and css", highlightColor) + " files " + color("without version and minify", highlightColor) + ", and export them to public folder )", "WHITE"));
-
-        // gulp --template templatename
-        console.log("-> " + color("gulp --template templatename ", "RED") +
-            color("( compile " + color("js and css", highlightColor) + " files " + color("without version and minify", highlightColor) +
-                ", and export them to public folder and " + color("exclude all except templatename", highlightColor) + ")", "WHITE"));
-
-        // gulp  --template templatename --js
-        console.log("-> " + color("gulp watch --template templatename --js ", "RED") +
-            color("( compile " + color("only js", highlightColor) + " files " + color("without version and minify", highlightColor) +
-                ", and export them to public folder and " + color("exclude all except templatename", highlightColor) + " and " +
-                color("exclude all css files except js ", highlightColor) + "by using " + color("--js ", highlightColor) + ")", "WHITE"));
-
-        // gulp  --template templatename --css
-        console.log("-> " + color("gulp --template templatename --css ", "RED") +
-            color("( compile " + color("only css", highlightColor) + " files " + color("without version and minify", highlightColor) +
-                ", and export them to public folder and " + color("exclude all except templatename", highlightColor) + " and " +
-                color("exclude all css files except js ", highlightColor) + "by using " + color("--css ", highlightColor) + ")", "WHITE"));
-
-        // gulp  --images
-        console.log("-> " + color("gulp --images ", "RED") +
-            color("( compile " + color("js, css and images", highlightColor) + " files " + color("without version and minify", highlightColor) +
-                ", and export them to public folder , by using " + color("--images", highlightColor) + " adds images task to gulp", "WHITE"));
-
-        // divider
-        console.log(color(divider, dividerColor));
-
-        // gulp watch
-        console.log(color("Gulp Watch:", titleColor));
-
-        // gulp watch
-        console.log("-> " + color("gulp watch ", "RED") +
-            color("( watch and compile " + color("js and css", highlightColor) + " files " + color("without version and minify", highlightColor) +
-                ", and export them to public folder )", "WHITE"));
-
-        // gulp watch --template templatename
-        console.log("-> " + color("gulp watch --template templatename ", "RED") +
-            color("( watch and compile " + color("js and css", highlightColor) + " files " + color("without version and minify", highlightColor) +
-                ", and export them to public folder and " + color("exclude all except templatename", highlightColor) + ")", "WHITE"));
-
-        // gulp watch --template templatename --js
-        console.log("-> " + color("gulp watch --template templatename --js ", "RED") +
-            color("( watch and compile " + color("only js", highlightColor) + " files " + color("without version and minify", highlightColor) +
-                ", and export them to public folder and " + color("exclude all except templatename", highlightColor) + " and " +
-                color("exclude all css files except js ", highlightColor) + "by using " + color("--js ", highlightColor) + ")", "WHITE"));
-
-        // gulp watch --template templatename --css
-        console.log("-> " + color("gulp watch --template templatename --css ", "RED") +
-            color("( watch and compile " + color("only css", highlightColor) + " files " + color("without version and minify", highlightColor) +
-                ", and export them to public folder and " + color("exclude all except templatename", highlightColor) + " and " +
-                color("exclude all css files except js ", highlightColor) + "by using " + color("--css ", highlightColor) + ")", "WHITE"));
-
-        // gulp  --images
-        console.log("-> " + color("gulp watch --images ", "RED") +
-            color("( watch and compile " + color("js, css and images", highlightColor) + " files " + color("without version and minify", highlightColor) +
-                ", and export them to public folder , by using " + color("--images", highlightColor) + " adds images task to gulp", "WHITE"));
-
-        // divider
-        console.log(color(divider, dividerColor));
-
-        // gulp production
-        console.log(color("Gulp Production:", titleColor));
-
-        // gulp --production
-        console.log("-> " + color("gulp --production ", "RED") +
-            color("( compile " + color("js and css", highlightColor) + " files " + color("with version and minify", highlightColor) +
-                ", and export them to public folder and into " + color("build/ with rev-manifest.json ", highlightColor) + ")", "WHITE"));
-
-        // gulp --production --css
-        console.log("-> " + color("gulp --production --css ", "RED") +
-            color("( compile " + color("only css", highlightColor) + " files " + color("with version and minify", highlightColor) +
-                ", and export them to public folder and into " + color("build/ with rev-manifest.json ", highlightColor) + ")", "WHITE"));
-
-        // gulp --production --js
-        console.log("-> " + color("gulp --production --js ", "RED") +
-            color("( compile " + color("only js", highlightColor) + " files " + color("with version and minify", highlightColor) +
-                ", and export them to public folder and into " + color("build/ with rev-manifest.json ", highlightColor) + ")", "WHITE"));
-
-        // divider
-        console.log(color(divider, dividerColor));
-
-        // gulp list
-        console.log(color("Gulp List:", titleColor));
-
-        // gulp list --templates
-        console.log("-> " + color("gulp list --templates ", "RED") +
-            color("( list of all " + color("templates", highlightColor) + " names with" + color(" command usage", highlightColor) + " )", "WHITE"));
-
-        // gulp list --version
-        console.log("-> " + color("gulp list --version ", "RED") +
-            color("( list of all " + color("templates", highlightColor) + " names with" + color(" version files", highlightColor) + " )" , "WHITE"));
-
-        // divider
-        console.log(color(divider, dividerColor));
-
-        // gulp list
-        console.log(color("Gulp Clean:", titleColor));
-
-        // gulp clean
-        console.log("-> " + color("gulp clean ", "RED") +
-            color("( clean all " + color("dist/ files ", highlightColor) + "css/js" + color(" with build/ files and rev-manifest.json", highlightColor)  + " )", "WHITE"));
-
-        // gulp clean --build
-        console.log("-> " + color("gulp clean --build ", "RED") +
-            color("( clean all " + color("build version files ", highlightColor) + "and" + color(" rev-manifest.json", highlightColor)  + " )", "WHITE"));
-
-        // gulp clean --public
-        console.log("-> " + color("gulp clean --dist ", "RED") +
-            color("( clean all " + color("dist/ files", highlightColor) + " css/js " + color("without build files", highlightColor) + " )" , "WHITE"));
-
-        // gulp clean --all
-        console.log("-> " + color("gulp clean --all ", "RED") +
-            color("( clean all " + color("dist/ files", highlightColor) + " css/js/fonts " + color("with build files including rev-manifest.json", highlightColor)  + " )", "WHITE"));
-
-        // divider
-        console.log(color(divider, dividerColor));
-
-        // gulp Assets
-        console.log(color("Gulp Assets:", titleColor));
-
-        // gulp assets
-        console.log("-> " + color("gulp assets ", "RED") +
-            color("( runs " + color("gulpbower.js tasks", highlightColor) + ", copying " + color("fonts, images, search-replace", highlightColor) + " on required files from "  + color("bower packages folder to public folder", highlightColor) + " )", "WHITE"));
-
-        // divider
-        console.log(color(divider, dividerColor));
-
-        // Elixir Notify
-        console.log(color("Gulp Notification:", titleColor));
-
-        // gulp notify
-        console.log("-> " + color("gulp --notify stop", "RED") +
-            color("( adding " + color("--notify stop", highlightColor) +
-                ", disables gulp notifications" +
-                " on all commands", "WHITE"));
-
-        // divider
-        console.log(color(divider, dividerColor));
-
-        // gulp config
-        console.log(color("Config:", titleColor));
-
-        // gulp config
-        console.log("-> " + color("gulp config ", "RED") +
-            color(" view alixir config json file.", "WHITE"));
-
-
+class Help {
+    /**
+     * constructor of Help class
+     * @param colors
+     */
+    constructor(colors) {
+        this.colors = colors;
+        this.divider = "-------------------------------------------------------------------------------------------------------------------------";
     }
-};
+
+    /**
+     * about
+     */
+    about() {
+        console.log(color("By: Alan Elias", this.colors.highlight));
+        console.log(color("Email: alaaelias@gmail.com", this.colors.highlight));
+        console.log(color("LinkedIn: http://www.linkedin.com/in/alanwelias", this.colors.highlight));
+    }
+
+    /**
+     * help
+     */
+    help() {
+
+        // gulp
+        console.log(color("Compile:", this.colors.title));
+
+        // npm run dev
+        console.log("-> " + color("npm run dev ", this.colors.subText) +
+            color("( compiles " + color("js and css", this.colors.highlight) + " files " + color("without version and minify", this.colors.highlight) + ", and export them to public folder )", this.colors.text));
+
+        // npm run dev -- api="templates:template1,template2"
+        console.log("-> " + color('npm run dev -- api="templates:template1,template2" ', this.colors.subText) +
+            color("( compiles " + color("js and css", this.colors.highlight) + " files " + color("without version and minify", this.colors.highlight) +
+                ", and export them to public folder and " + color("exclude all except template1 and template2", this.colors.highlight) + " )", this.colors.text));
+
+        // npm run dev -- api="templates:template1&js"
+        console.log("-> " + color('npm run dev -- api="templates:template1&js" ', this.colors.subText) +
+            color("( compiles " + color("only js", this.colors.highlight) + " files " + color("without version and minify", this.colors.highlight) +
+                ", and export them to public folder and " + color("exclude all except template1", this.colors.highlight) + " and " +
+                color("exclude all css files except js ", this.colors.highlight) + "by using " + color('api="js"', this.colors.highlight) + " )", this.colors.text));
+
+        // npm run dev -- api="templates:template1&css"
+        console.log("-> " + color('npm run dev -- api="templates:template1&css" ', this.colors.subText) +
+            color("( compiles " + color("only css", this.colors.highlight) + " files " + color("without version and minify", this.colors.highlight) +
+                ", and export them to public folder and " + color("exclude all except template1", this.colors.highlight) + " and " +
+                color("exclude all css files except js ", this.colors.highlight) + "by using " + color('api="css"', this.colors.highlight) + " )", this.colors.text));
+
+        // divider
+        console.log(color(this.divider, this.colors.divider));
+
+        // watch
+        console.log(color("Watch:", this.colors.title));
+
+        // npm run watch
+        console.log("-> " + color('npm run watch ', this.colors.subText) +
+            color("( watchs and compiles " + color("js and css", this.colors.highlight) + " files " + color("without version and minify", this.colors.highlight) +
+                ", and export them to public folder )", this.colors.text));
+
+        // npm run watch -- api="templates:template1,template2"
+        console.log("-> " + color('npm run watch -- api="templates:template1,template2" ', this.colors.subText) +
+            color("( watchs and compiles " + color("js and css", this.colors.highlight) + " files " + color("without version and minify", this.colors.highlight) +
+                ", and export them to public folder and " + color("exclude all except template1 and template2", this.colors.highlight) + " )", this.colors.text));
+
+        // npm run watch -- api="templates:template1&js"
+        console.log("-> " + color('npm run watch -- api="templates:template1&js" ', this.colors.subText) +
+            color("( watchs and compiles " + color("only js", this.colors.highlight) + " files " + color("without version and minify", this.colors.highlight) +
+                ", and export them to public folder and " + color("exclude all except template1", this.colors.highlight) + " and " +
+                color("exclude all css files except js ", this.colors.highlight) + "by using " + color('api="js" ', this.colors.highlight) + ")", this.colors.text));
+
+        // npm run watch -- api="templates:template1&css"
+        console.log("-> " + color('npm run watch -- api="templates:template1&css" ', this.colors.subText) +
+            color("( watchs and compiles " + color("only css", this.colors.highlight) + " files " + color("without version and minify", this.colors.highlight) +
+                ", and export them to public folder and " + color("exclude all except template1", this.colors.highlight) + " and " +
+                color("exclude all css files except js ", this.colors.highlight) + "by using " + color('api="css" ', this.colors.highlight) + ")", this.colors.text));
+
+        // divider
+        console.log(color(this.divider, this.colors.divider));
+
+        // production
+        console.log(color("Production:", this.colors.title));
+
+        // npm run production -- api="templates:template1,template2"
+        console.log("-> " + color("npm run production ", this.colors.subText) +
+            color("( compiles " + color("js and css", this.colors.highlight) + " files " + color("with version and minify", this.colors.highlight) +
+                ", and export them to public folder )", this.colors.text));
+
+        // npm run production -- api="css"
+        console.log("-> " + color('npm run production -- api="css" ', this.colors.subText) +
+            color("( compile " + color("only css", this.colors.highlight) + " files " + color("with version and minify", this.colors.highlight) +
+                ", and export them to public folder )", this.colors.text));
+
+        // npm run production -- api="js"
+        console.log("-> " + color('npm run production -- api="js" ', this.colors.subText) +
+            color("( compile " + color("only js", this.colors.highlight) + " files " + color("with version and minify", this.colors.highlight) +
+                ", and export them to public folder )", this.colors.text));
+
+        // divider
+        console.log(color(this.divider, this.colors.divider));
+
+        // npm run production -- api="list:templates"
+        console.log(color("List/Display:", this.colors.title));
+
+        // npm run production -- api="list:templates"
+        console.log("-> " + color('npm run production -- api="list:templates" ', this.colors.subText) +
+            color("( list of all " + color("templates", this.colors.highlight) + " names with" + color(" command usage", this.colors.highlight) + " )", this.colors.text));
+
+        // npm run production -- api="list:templates&css"
+        console.log("-> " + color('npm run production -- api="list:templates&css" ', this.colors.subText) +
+            color("( list of only styles " + color("templates", this.colors.highlight) + " names with" + color(" command usage", this.colors.highlight) + " ) you can use js as well", this.colors.text));
+
+        // divider
+        console.log(color(this.divider, this.colors.divider));
+
+        // Clean
+        console.log(color("Clean:", this.colors.title));
+
+        // npm run dev -- api="clean"
+        console.log("-> " + color('npm run dev -- api="clean" ', this.colors.subText) +
+            color("( clean all " + color("css, js, fonts, images files ", this.colors.highlight) + " in the public folder" + color(" with build/ files ", this.colors.highlight) + " )", this.colors.text));
+
+        // npm run dev -- api="clean:css,js"
+        console.log("-> " + color('npm run dev -- api="clean:css,js" ', this.colors.subText) +
+            color("( clean all " + color("css, js files only", this.colors.highlight) + " in the public folder" + color(" you can use css,js,fonts,images,build ", this.colors.highlight) + " )", this.colors.text));
+
+        // divider
+        console.log(color(this.divider, this.colors.divider));
+
+        // Assets
+        console.log(color("Assets:", this.colors.title));
+
+        // npm run dev -- api="assets"
+        console.log("-> " + color('npm run dev -- api="assets" ', this.colors.subText) +
+            color("( runs " + color("assets.json tasks", this.colors.highlight) + ", copying " + color("fonts, images, search-replace", this.colors.highlight) + " on required files from " + color("bower packages folder to public folder", this.colors.highlight) + " )", this.colors.text));
+
+        // npm run dev -- api="assets:images,fonts"
+        console.log("-> " + color('npm run dev -- api="assets:images,fonts" ', this.colors.subText) +
+            color("( runs " + color("assets.json tasks", this.colors.highlight) + ", copying " + color("fonts, images", this.colors.highlight) + " only " + color("these are tags attribute on each task tag: 'images'", this.colors.highlight) + " )", this.colors.text));
+
+        // divider
+        console.log(color(this.divider, this.colors.divider));
+
+        // Notification
+        console.log(color("Notification:", this.colors.title));
+
+        // npm run dev -- api="notify:off"
+        console.log("-> " + color('npm run dev -- api="notify:off" ', this.colors.subText) +
+            color("( adding " + color("notify:off", this.colors.highlight) +
+                ", disables webpack notifications" +
+                " on all commands", this.colors.text));
+
+        // divider
+        console.log(color(this.divider, this.colors.divider));
+
+        // config
+        console.log(color("Config:", this.colors.title));
+
+        // npm run dev -- api="config"
+        console.log("-> " + color('npm run dev -- api="config" ', this.colors.subText) +
+            color(" view api config json file.", this.colors.text));
+
+        // divider
+        console.log(color(this.divider, this.colors.divider));
+
+        // config
+        console.log(color("Usage e.g:", this.colors.title));
+
+        // e.g
+        console.log("-> " + color('npm run dev -- api="notify:off&clean:js&assets:images,fonts&js&compile" ' + color('api="clean&assets&compile" compile means fource compile after assets and clean tasks', this.colors.title), this.colors.subText));
+
+        console.log("-> " + color('npm run dev -- api="templates:admin,dashboard&clean:js&assets:images,fonts&compile" ', this.colors.subText));
+
+        console.log("-> " + color('npm run watch -- api="templates:admin,dashboard" ', this.colors.subText));
+
+        console.log("-> " + color('npm run production -- api="clean&assets" ', this.colors.subText));
+    }
+
+    /**
+     * list command
+     * @param api
+     * @param flagValue
+     * @returns {boolean}
+     */
+    list(api, flagValue) {
+        if (api.argv.inArgv(flagValue, "templates")) {
+            var isCSS = api.argv.isArgv(api.flags.CSS),
+                isJS = api.argv.isArgv(api.flags.JS);
+
+            if (isCSS) {
+                this.listStylesTemplates(api);
+            } else if (isJS) {
+                this.listScriptsTemplates(api);
+            } else {
+                this.listStylesTemplates(api);
+                console.log(color(this.divider, this.colors.divider));
+                this.listScriptsTemplates(api);
+            }
+        }
+        return true;
+    }
+
+    /**
+     * list all styles templates
+     * @param api
+     */
+    listStylesTemplates(api) {
+        // Style Sheets / CSS
+        console.log(color("Style Sheets:", this.colors.divider));
+        api.listCommands(api.tasks.styles);
+    }
+
+    /**
+     * list all styles templates
+     * @param api
+     */
+    listScriptsTemplates(api) {
+        // JavaScript / JS
+        console.log(color("JavaScript:", this.colors.divider));
+        api.listCommands(api.tasks.scripts);
+    }
+
+
+}
+
+module.exports = Help;
