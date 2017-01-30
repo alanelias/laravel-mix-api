@@ -125,9 +125,9 @@ Override api config (files, filters and path) [see documentaion](docs/config.md)
 ```json
 mixApi.setConfig({
   files: {
-    styles: "styles.json",
-    scripts: "scripts.json",
-    assets: "assets.json"
+    "styles": "styles.json",
+    "scripts": "scripts.json",
+    "assets": "assets.json"
   },
   "filters": {
     "%bower%": "vendor/bower_dl",
