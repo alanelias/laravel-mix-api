@@ -46,7 +46,7 @@ and then do search and replace for images path in the css file (find `images/` r
   }
 }
 ```
-[see documentation](ALIXIR.md) about overriding config
+[see documentation](config.md) about overriding config
 
 ###Please read below:
 ```
