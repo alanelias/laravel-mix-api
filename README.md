@@ -182,7 +182,7 @@ Create **scripts.json**  [see documentaion](docs/scripts.md)
     "template": "app",
     "files": [
       {
-        "type": "scripts",
+        "type": "js",
         "filesIn": [
           "common/variables.js",
           "%res_bower%/jquery/dist/jquery.js",
@@ -200,7 +200,7 @@ Create **scripts.json**  [see documentaion](docs/scripts.md)
     "template": "home",
     "files": [
       {
-        "type": "browserify",
+        "type": "js",
         "filesIn": [
           "components/somelib.js",
           "%res_bower%/package1/dist/js/script.js",
