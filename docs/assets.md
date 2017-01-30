@@ -25,6 +25,7 @@ and then do search and replace for images path in the css file (find `images/` r
         }
       },
       {
+        "tag": "images", // you can run npm run dev -- api="assets:images"
         "copy": {
           "from": "%bower%/slider-pro/dist/css/images/**",
           "to": "public/images/slider-pro/"
@@ -58,6 +59,7 @@ and then do search and replace for images path in the css file (find `images/` r
  *          "package": "package-name", // template name use to describe the package object
  *          "files": [
  *              {
+ *                  "tag": "images", // you can run npm run dev -- api="assets:images"
  *                  "copy": {
  *                      from": "%bower%/package-name/dist/images/**", // copy all (/**) images from the package folder witch is vendor/bower_dl/package-name/dist/images/**
  *                      to": "public/img/package-name" // copy all images to public/img/package-name
@@ -87,6 +89,7 @@ and then do search and replace for images path in the css file (find `images/` r
  *          "package": "Bootstrap", // copying bootstrap fonts e.g
  *          "files": [
  *              {
+ *                  "tag": "fonts", // you can run npm run dev -- api="assets:fonts"
  *                  "copy": {
  *                      "from": "%bower%/bootstrap-sass/assets/fonts/bootstrap/**", // copy all files from %bower%/bootstrap-sass/assets/fonts/bootstrap/**
  *                      "to": "public/fonts/bootstrap" // to this folder
