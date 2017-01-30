@@ -1,5 +1,5 @@
 # Break down lararvel assets 
-*Override php elixir function*
+*Override php mix function*
 ```php
 class AssetsHelper
 {
@@ -45,7 +45,7 @@ class AssetsHelper
         return "";
     }
 
-    public static function elixir($file)
+    public static function mix($file)
     {
         $manifest_file = public_path('build/rev-manifest.json');
 
@@ -70,4 +70,4 @@ class AssetsHelper
 }
 ```
 
-[Go Back](README.md)
+[Go Back](../README.md)
