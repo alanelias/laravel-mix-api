@@ -1,10 +1,9 @@
 
-## override config
-there are two ways to override config file. 
+## Override Config
 
 **1.** Create **alixir.json** in the project root dir to override alixir config (files, filters and path) 
-```json
-{
+```js
+mixApi.setConfig({
   "path": {
     "version": {
       "build": "public/build/",
@@ -37,7 +36,7 @@ there are two ways to override config file.
     "%bower%": "vendor/bower_dl",
     "%res_bower%": "../../../vendor/bower_dl"
   }
-}
+});
 ```
 
 **2.** Install the following package:
