@@ -21,7 +21,7 @@ and then do search and replace for images path in the css file (find `images/` r
           "rename": {
             "extname": ".scss"
           },
-          "to": "vendor/bower_dl/slider-pro/dist/sass/"
+          "to": "%bower%/slider-pro/dist/sass/"
         }
       },
       {
