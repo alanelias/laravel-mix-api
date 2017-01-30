@@ -8,7 +8,7 @@
  *  Documentation
  * [ // here is array of template object 
  *    {
- *         "template": "app", // template name use to filter gulp when you run gulp --template app
+ *         "template": "app", // template name use to filter gulp when you run npm run dev -- api="templates:app"
  *         "required": true, // add this if you want all files under this name to be compiled every time
  *         "files": [{
  *             "type": "sass", // type will apply mix function call e.g: mix.sass(....);
@@ -22,7 +22,7 @@
  *         }]
  *     },
  *    {// another template
- *         "template": "something", // template name use to filter gulp when you run gulp --template somthing
+ *         "template": "something", // template name use to filter gulp when you run npm run dev -- api="templates:somthing" 
  *         "required": true, // add this if you want all files under this name to be compiled every time
  *         "files": [{
  *             "type": "less", // type will apply mix function call e.g: mix.less(....);
