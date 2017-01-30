@@ -1,7 +1,7 @@
 
 ## Override Config
 
-**1.** Create **alixir.json** in the project root dir to override alixir config (files, filters and path) 
+**1.** override api config (files, filters and path) 
 ```js
 mixApi.setConfig({
   "path": {
