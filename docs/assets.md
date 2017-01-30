@@ -78,7 +78,7 @@ and then do search and replace for images path in the css file (find `images/` r
  *                      "rename": {
  *                          "extname": ".scss" // change file extinstion to scss
  *                      },
- *                      "to": "vendor/bower_dl/package-name/src/sass/" // save file into this path
+ *                      "to": "%bower%/package-name/src/sass/" // save file into this path
  *                  }
  *              }
  *          ]
@@ -88,7 +88,7 @@ and then do search and replace for images path in the css file (find `images/` r
  *          "files": [
  *              {
  *                  "copy": {
- *                      "from": "%bower%/bootstrap-sass/assets/fonts/bootstrap/**", // copy all files from vendor/bower_dl/bootstrap-sass/assets/fonts/bootstrap/**
+ *                      "from": "%bower%/bootstrap-sass/assets/fonts/bootstrap/**", // copy all files from %bower%/bootstrap-sass/assets/fonts/bootstrap/**
  *                      "to": "public/fonts/bootstrap" // to this folder
  *                  }
  *              },
