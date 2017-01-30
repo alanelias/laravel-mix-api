@@ -83,14 +83,6 @@ you can fix it by installing the following packages:
 npm install babel-preset-es2015 --save-dev
 npm install babel-preset-react --save-dev
 ```
-**Note** `production` usage you can install all required packages with `--save` for production 
-
-**Note** if you are using newer version of laravel-elixir v6 you might need to install the following package:
-```
-npm install laravel-elixir-browserify-official --save-dev
-```
-
-**Note** if you have any problems with files permissions you can run `sudo` on mac  
  
 **On Deploy** run the following commands: 
 ```
@@ -290,10 +282,10 @@ Create **assets.json** [see documentaion](docs/assets.md)
 ```
 
 # Break down laravel assets
-[see documentaion](LARAVEL.md)
+[see documentaion](docs/php.md)
 Main project css file witch is `app.css`
 ```blade
-<link href="{!!  \App\Helpers\AssetsHelper::elixir('css/app.css')  !!}" rel="stylesheet" />
+<link href="{!!  \App\Helpers\AssetsHelper::mix('css/app.css')  !!}" rel="stylesheet" />
 ```
 
 To get `first or second route` css file your-website.com/`%first-route%`/*
@@ -308,7 +300,7 @@ To create page css `class` in each page
 
 Main project js file which is `app.js`
 ```blade
-<script src="{!!  \App\Helpers\AssetsHelper::elixir('js/app.js')  !!}"></script>
+<script src="{!!  \App\Helpers\AssetsHelper::mix('js/app.js')  !!}"></script>
 ```
 
 To get `first or second route` js file your-website.com/`%first-route%`/*
