@@ -1,18 +1,18 @@
-# Alixir | elixir-helper | laravel-elixir-helper
-Alixir is `npm package` built on top of elixir and gulp, its an easy cleaning solution to CSS / JS mess. Giving you a nice clean structure for organizing all your sites assets whether it is images, javascript files, or stylesheets and keeps the power of SASS, Browserify, versioning at your fingertips in simple commands you might already be familiar with.
-**The advantage of this package is breaking down all your project assets files as templates by filtering gulp and dealing with json files without editing gulp** 
+# laravel-mix-api
+laravel-mix-api is `npm package` built on top of laravel-mix and webpack, its an easy cleaning solution to CSS / JS mess. Giving you a nice clean structure for organizing all your sites assets whether it is images, javascript files, or stylesheets and keeps the power of SASS, Browserify, versioning at your fingertips in simple commands you might already be familiar with.
+**The advantage of this package is breaking down all your project assets files as templates by filtering mix and dealing with json files without editing gulp** 
 
 ## You can use this:
 ```
-gulp watch --template customer-service --js
+npm run watch -- api="templates:customer-service,admin&js&clean&assets:images"
 ```
 or
 ```
-gulp watch --template customer-service --css
+npm run dev -- api="templates:customer-service&css"
 ```
 or
 ```
-gulp watch --css
+npm run dev -- api="assets:images,fonts&clean&compile"
 ```
 
 **Project**
@@ -54,17 +54,16 @@ gulp watch --css
 │   │   │    ├────/pages/
 │   │   │    └────app.scss 
 │   │   │ 
-│   │   ├────styles.json (styles tasks --css)
+│   │   ├────styles.json (styles tasks api="css")
 │   │   │ 
-│   │   ├────scripts.json (scripts tasks --js)
+│   │   ├────scripts.json (scripts tasks api="js")
 │   │   │ 
 │   │   └────assets.json (assets tasks)
 │   │   
 │   └───/views/
 │      
 ├───package.json
-├───alixir.json (override package config)
-├───gulpfile.js
+├───webpack.mix.js (laravel-mix and laravel-mix-api init)
 │
 
 ```
@@ -72,13 +71,9 @@ gulp watch --css
 ## Installation 
 **npm**  
 ```
-npm install gulp --save-dev
+npm install laravel-mix --save-dev
 
-npm install gulp-util --save-dev
-
-npm install laravel-elixir --save-dev
-
-npm install alixir --save-dev
+npm install laravel-mix-api --save-dev
 ```
 
 **Note** if you have this error:
