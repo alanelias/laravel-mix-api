@@ -100,4 +100,4 @@ and then do search and replace for images path in the css file (find `images/` r
 
 **Note** if you have a problem with permissions [see documentation](config.md) about overriding chmod settings
 
-[Go Back](README.md)
+[Go Back](../README.md)
