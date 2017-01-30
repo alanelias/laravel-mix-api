@@ -2,7 +2,7 @@
 
 # scripts.json
 
-**Note** with `type` you can use all mix calls script, coffee, browserify ...... etc
+**Note** with `type` you can use all mix calls js ...... etc
 
 ```
 /**
