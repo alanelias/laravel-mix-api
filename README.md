@@ -1,6 +1,6 @@
 # laravel-mix-api
 laravel-mix-api is `npm package` built on top of laravel-mix and webpack, its an easy cleaning solution to CSS / JS mess. Giving you a nice clean structure for organizing all your sites assets whether it is images, javascript files, or stylesheets and keeps the power of SASS, Browserify, versioning at your fingertips in simple commands you might already be familiar with.
-**The advantage of this package is breaking down all your project assets files as templates by filtering mix and dealing with json files without editing gulp** 
+**The advantage of this package is breaking down all your project assets files as templates by filtering webpack and dealing with json files without editing gulp** 
 
 ## You can use this:
 ```
@@ -58,7 +58,7 @@ npm run dev -- api="assets:images,fonts&clean&compile"
 │   │   │ 
 │   │   ├────scripts.json (scripts tasks api="js")
 │   │   │ 
-│   │   └────assets.json (assets tasks)
+│   │   └────assets.json (assets tasks api="assets")
 │   │   
 │   └───/views/
 │      
@@ -94,32 +94,51 @@ npm install laravel-elixir-browserify-official --save-dev
  
 **On Deploy** run the following commands: 
 ```
-gulp assets
-gulp --production
+npm run production -- api="assets"
 ```
 
 ## Usage
-**gulpfile.js** 
+**webpack.mix.js** 
 ```
-require('alixir');
+let mix = require('laravel-mix'),
+    MixApi = require("laravel-mix-api");
+mixApi = new MixApi(mix);
+mixApi.setConfig({
+    files: {
+        styles: "resources/assets/styles.json",
+        scripts: "resources/assets/scripts.json",
+        assets: "resources/assets/assets.json"
+    }, filters: {
+        "%bower%": "vendor/bower_dl",
+        "%node%": "node_modules",
+        "%images%": "public/images",
+        "%fonts%": "public/fonts"
+    },
+    other: {
+        chmod: 666
+    }
+});
+mixApi.run();
 ```
 
-Create **alixir.json** in the project root dir to override alixir config (files, filters and path) [see documentaion](ALIXIR.md) 
+Override api config (files, filters and path) [see documentaion](docs/config.md) 
 ```json
-{
-  "files": {
-    "styles": "styles.json",
-    "scripts": "scripts.json",
-    "assets": "assets.json"
+mixApi.setConfig({
+  files: {
+    styles: "styles.json",
+    scripts: "scripts.json",
+    assets: "assets.json"
   },
   "filters": {
     "%bower%": "vendor/bower_dl",
-    "%res_bower%": "../../../vendor/bower_dl"
+    "%node%": "node_modules",
+    "%images%": "public/images",
+    "%fonts%": "public/fonts"
   },
   "path": {
     "version": {
       "build": "public/build/",
-      "manifest": "public/build/rev-manifest.json"
+      "manifest": "public/mix-manifest.json"
     },
     "dist": {
       "images": "public/images/",
@@ -134,10 +153,10 @@ Create **alixir.json** in the project root dir to override alixir config (files,
       "fonts": "resources/assets/public/fonts/"
     }
   }
-}
+});
 ```
 
-Create **styles.json**  [see documentaion](STYLES.md)
+Create **styles.json**  [see documentaion](docs/styles.md)
 ```json
 [
   {
@@ -164,7 +183,7 @@ Create **styles.json**  [see documentaion](STYLES.md)
 ]
 ```
 
-Create **scripts.json**  [see documentaion](SCRIPTS.md)
+Create **scripts.json**  [see documentaion](docs/scripts.md)
 ```json
 [
   {
@@ -204,7 +223,7 @@ Create **scripts.json**  [see documentaion](SCRIPTS.md)
 ]
 ```
 
-Create **assets.json** [see documentaion](ASSETS.md)
+Create **assets.json** [see documentaion](docs/assets.md)
 ```json
 [
   {
@@ -297,32 +316,27 @@ To get `first or second route` js file your-website.com/`%first-route%`/*
 {!! \App\Helpers\AssetsHelper::pageScript() !!}
 ```
 
-# gulp commands and flags
-[see documentaion](GULP.md) 
+# api commands and flags
+[see documentaion](docs/help.md) 
 
 start with:
 ```
-gulp help
+npm run dev -- api="help"
 ```
 
-to view alixir config:
+to view mix api config:
 ```
-gulp config
+npm run dev -- api="config"
 ```
 
 list all your templates files:
 ```
-gulp list --templates
-```
-
-list all your version files:
-```
-gulp list --version
+npm run dev -- api="list:templates"
 ```
 
 to run assets task which into assets.json file:
 ```
-gulp assets
+npm run dev -- api="assets"
 ```
 
 
