@@ -1,6 +1,6 @@
 
 
-# Alixir Commands
+# api Commands
 
 TOdo
 
