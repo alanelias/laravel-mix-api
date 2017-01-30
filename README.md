@@ -4,11 +4,11 @@ laravel-mix-api is `npm package` built on top of laravel-mix and webpack, its an
 
 ## You can use this:
 ```
-npm run watch -- api="templates:customer-service,admin&js&clean&assets:images"
+npm run dev -- api="templates:customer-service,admin&js&clean&assets:images"
 ```
 or
 ```
-npm run dev -- api="templates:customer-service&css"
+npm run watch -- api="templates:customer-service&css"
 ```
 or
 ```
