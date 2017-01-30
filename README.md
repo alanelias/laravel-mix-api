@@ -116,7 +116,7 @@ mixApi.run();
 Override api config (files, filters and path) [see documentaion](docs/config.md) 
 ```json
 mixApi.setConfig({
-  files: {
+  "files": {
     "styles": "styles.json",
     "scripts": "scripts.json",
     "assets": "assets.json"
