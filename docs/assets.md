@@ -91,6 +91,14 @@ and then do search and replace for images path in the css file (find `images/` r
  *                      "from": "%bower%/bootstrap-sass/assets/fonts/bootstrap/**", // copy all files from vendor/bower_dl/bootstrap-sass/assets/fonts/bootstrap/**
  *                      "to": "public/fonts/bootstrap" // to this folder
  *                  }
+ *              },
+ *              {
+ *                  "use": "webpack",
+ *                  "copy": {
+ *                      "from": "%bower%/bootstrap-sass/assets/fonts/bootstrap/**", // copy all files from vendor/bower_dl/bootstrap-sass/assets/fonts/bootstrap/**
+ *                      "to": "public/fonts/bootstrap", // target folder
+ *                      "flattern": true
+ *                  }
  *              }
  *          ]
  *      }
