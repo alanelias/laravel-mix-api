@@ -7,7 +7,7 @@ mixApi.setConfig({
   "path": {
     "version": {
       "build": "public/build/",
-      "manifest": "public/build/rev-manifest.json"
+      "manifest": "public/mix-manifest.json"
     },
     "dist": {
       "images": "public/images/",
@@ -23,7 +23,6 @@ mixApi.setConfig({
     }
   },
   "files": {
-    "config": "alixir.json",
     "styles": "resources/assets/styles.json",
     "scripts": "resources/assets/scripts.json",
     "assets": "resources/assets/assets.json"
@@ -34,36 +33,12 @@ mixApi.setConfig({
   },
   "filters": {
     "%bower%": "vendor/bower_dl",
-    "%res_bower%": "../../../vendor/bower_dl"
+    "%node%": "node_modules",
+    "%images%": "public/images",
+    "%fonts%": "public/fonts"
   }
 });
 ```
-
-**2.** Install the following package:
-```
-npm install gulp-util --save
-```
-
-then add this to `gulpfile.js`
-```javascript
-var gutil = require('gulp-util');
-
-gutil.env.ALIXIR_CONFIG = {
-    "files": {
-        "styles": "resources/assets/styles.json",
-        "scripts": "resources/assets/scripts.json",
-        "assets": "resources/assets/assets.json"
-    },
-    "filters": {
-        "%bower%": "vendor/bower_dl",
-        "%images%": "public/images/",
-        "%fonts%": "public/fonts/"
-    }
-};
-
-require("alixir");
-```
-
 
 
 **files:** by default they will be in the project root dir but you can override the path e.g "styles": "/resources/styles.json"
@@ -92,7 +67,7 @@ require("alixir");
 }
 ```
 
-**chmod:** if you have problem with permissions when you run `gulp assets` and you are using already `bower` or other package required some times `sudo` on `mac` you can override chmod settings and run `sudo gulp assets` without any problem:
+**chmod:** if you have problem with permissions when you run `npm run dev -- api="assets"` and you are using already `bower` or other package required some times `sudo` on `mac` you can override chmod settings and run `sudo npm run dev -- api="assets"` without any problem:
 
 By Default: `"chmod": "off"`
 ```json
@@ -103,30 +78,10 @@ By Default: `"chmod": "off"`
   }
 }
 ```
-or
-```javascript
-// work with javascript
-gutil.env.ALIXIR_CONFIG = {
-  other: { 
-    chmod: {
-      owner: {
-        read: true,
-        write: true,
-        execute: true
-      },
-      group: {
-        execute: true
-      },
-      others: {
-        execute: true
-      }
-    }
-  }
-};
-```
+
 **Related:** https://github.com/sindresorhus/gulp-chmod 
 
-**Elixir Notifications:** some people don't like elixir notifications so you can turn it off allways by adding this:
+**Elixir Notifications:** some people don't like mix notifications so you can turn it off allways by adding this:
 
 ```json
 {
@@ -160,4 +115,4 @@ module.exports =  tasks;
 ```
 
 
-[Go Back](README.md)
+[Go Back](../README.md)
