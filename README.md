@@ -4,7 +4,7 @@ laravel-mix-api is `npm package` built on top of laravel-mix and webpack, its an
 
 ## You can use this:
 ```
-npm run dev -- api="templates:customer-service,admin&js&clean&assets:images"
+npm run dev -- api="templates:customer-service,admin&js&clean:js,images&assets:images,fonts"
 ```
 or
 ```
@@ -76,14 +76,15 @@ npm install laravel-mix --save-dev
 npm install laravel-mix-api --save-dev
 ```
 
-**Note** if you have this error:
-`gulp-notify: [Laravel Elixir] Browserify Failed!: Couldn't find preset "es2015" relative to directory` 
-you can fix it by installing the following packages:
+## Requirements   
 ```
-npm install babel-preset-es2015 --save-dev
-npm install babel-preset-react --save-dev
+npm -v ~= 4.1.1  
+node -v >= v6.0.0
+
+Global Packages:
+npm install webpack babel cross-env autoprefixer -g
 ```
- 
+
 **On Deploy** run the following commands: 
 ```
 npm run production -- api="assets"
