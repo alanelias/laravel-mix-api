@@ -24,14 +24,15 @@
  *         }]
  *     },
  *     { // another template
-*         "template": "something", // template name use to filter gulp when you run npm run dev -- api="templates:something"
-*         "required": true, // add this if you want all files under this name to be compiled every time
-*         "files": [ {
-*             "type": "js", // type will apply mix function call e.g: mix.js(....);
-*             "filesIn": "js/app-something.js",  // filesIn will be the first args for mix function (string/array of strings) e.g: mix.scripts(filesIn, ...);
-*             "version": "js/app.js" // version will be the version file when mix.version([.....]) called
-*         }]
-*     },
+ *         "template": "something", // template name use to filter gulp when you run npm run dev -- api="templates:something"
+ *         "required": true, // add this if you want all files under this name to be compiled every time
+ *         "files": [ {
+ *             "type": "js", // type will apply mix function call e.g: mix.js(....);
+ *             "filesIn": "js/app-something.js",  // filesIn will be the first args for mix function (string/array of strings) e.g: mix.scripts(filesIn, ...);
+ *             "fileOut": "public/js/app-something.js", // the output 
+ *             "version": "js/app-something.js" // version will be the version file when mix.version([.....]) called
+ *         }]
+ *     },
  * ]
  */
 ```
