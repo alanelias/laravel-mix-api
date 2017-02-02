@@ -101,7 +101,7 @@ npm run production -- api="assets"
     "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=webpack.config.js --define",
     "production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=webpack.config.js --define"
   },
-  "devDependencies": {}
+  "devDependencies": {},
   "dependencies": {}
 }
 ```
