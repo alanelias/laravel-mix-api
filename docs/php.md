@@ -47,18 +47,18 @@ class AssetsHelper
 
     public static function mix($file)
     {
-        $manifest_file = public_path('build/rev-manifest.json');
+        $manifest_file = public_path('mix-manifest.json');
 
         $manifest = null;
 
-        if (file_exists(public_path('build/rev-manifest.json'))) {
+        if (file_exists(public_path('build/mix-manifest.json'))) {
 
             $manifest = json_decode(file_get_contents($manifest_file), true);
 
         }
 
-        if (isset($manifest[$file]) && file_exists(public_path('build/' . $manifest[$file]))) {
-            return '/build/' . $manifest[$file];
+        if (isset($manifest['/' . $file]) && file_exists(public_path('/' . $manifest[$file]))) {
+            return '/' . $manifest['/' . $file];
 
         }
         if (file_exists(public_path($file))) {
