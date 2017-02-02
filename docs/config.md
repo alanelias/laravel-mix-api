@@ -58,7 +58,7 @@ mixApi.setConfig({
 
 ```json
 {
-  "filters": {
+  "alias": {
     "%key%": "value",
     "%key%": "value",
     "%images%": "public/images",
