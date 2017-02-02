@@ -114,37 +114,7 @@ mixApi.run();
 
 Override api config (files, filters and path) [see documentaion](docs/config.md) 
 ```json
-mixApi.setConfig({
-  "files": {
-    "styles": "styles.json",
-    "scripts": "scripts.json",
-    "assets": "assets.json"
-  },
-  "alias": {
-    "%bower%": "vendor/bower_dl",
-    "%node%": "node_modules",
-    "%images%": "public/images",
-    "%fonts%": "public/fonts"
-  },
-  "path": {
-    "version": {
-      "build": "public/build/",
-      "manifest": "public/mix-manifest.json"
-    },
-    "dist": {
-      "images": "public/images/",
-      "styles": "public/css/",
-      "scripts": "public/js/",
-      "fonts": "public/fonts/"
-    },
-    "assets": {
-      "images": "resources/assets/images/",
-      "styles": "resources/assets/sass/",
-      "scripts": "resources/assets/js/",
-      "fonts": "resources/assets/public/fonts/"
-    }
-  }
-});
+mixApi.setConfig({});
 ```
 
 Create **styles.json**  [see documentaion](docs/styles.md)
