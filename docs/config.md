@@ -1,7 +1,7 @@
 
 ## Override Config
 
-**1.** override api config (files, filters and path) 
+**1.** override api config (files, aliases and path) 
 ```js
 mixApi.setConfig({
   "path": {
@@ -53,7 +53,7 @@ mixApi.setConfig({
 ```
 
 
-**filters:** path filter it allowed you to change the default dir in file path e.g:
+**aliases:** path alias it allowed you to change the default dir in file path e.g:
 "%key%/somewhere/somefile.any"
 
 ```json
