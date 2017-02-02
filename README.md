@@ -90,7 +90,23 @@ npm install webpack babel cross-env autoprefixer -g
 npm run production -- api="assets"
 ```
 
-## Usage
+## Installation
+**npm** scripts add `--define` at the end of each line
+```
+{
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=webpack.config.js --define",
+    "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=webpack.config.js --define",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=webpack.config.js --define",
+    "production": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=webpack.config.js --define"
+  },
+  "devDependencies": {}
+  "dependencies": {}
+}
+```
+
+## Installation
 **webpack.mix.js** 
 ```
 let mix = require('laravel-mix'),
@@ -117,6 +133,7 @@ Override api config (files, filters and path) [see documentaion](docs/config.md)
 mixApi.setConfig({});
 ```
 
+## Installation
 Create **styles.json**  [see documentaion](docs/styles.md)
 ```json
 [
@@ -146,6 +163,7 @@ Create **styles.json**  [see documentaion](docs/styles.md)
 ]
 ```
 
+## Installation
 Create **scripts.json**  [see documentaion](docs/scripts.md)
 ```json
 [
@@ -186,6 +204,7 @@ Create **scripts.json**  [see documentaion](docs/scripts.md)
 ]
 ```
 
+## Installation
 Create **assets.json** [see documentaion](docs/assets.md)
 ```json
 [
