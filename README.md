@@ -131,8 +131,18 @@ mixApi.run();
 ```
 
 Override api config (files, filters and path) [see documentaion](docs/config.md) 
-```json
+```js
 mixApi.setConfig({});
+```
+
+Add custom api flags [see more](docs/flags.md) 
+```js
+if(mixApi.argv.isArgv('extract')) {
+    // your task
+    // mix.extract([]);
+    console.log("extract");
+    mixApi.abort(null);
+}
 ```
 
 ## Installation
