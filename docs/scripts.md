@@ -7,7 +7,7 @@
 ```
 /**
  *  Documentation
- * [ // here is array of template object
+ * [ // here is array of template objects
  *     {
  *         "template": "app", // template name use to filter gulp when you run npm run dev -- api="templates:app"
  *         "required": true, // add this if you want all files under this name to be compiled every time
