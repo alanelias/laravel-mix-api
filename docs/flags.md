@@ -20,7 +20,7 @@ if(argv) {
       /*
         or run fake task to avoid process exit
       */
-      // this.runFakeTesk();
+      // mixApi.runFakeTesk();
       // return true;
   }
   if(mixApi.argv.inArgv(argv, "two")) {
@@ -29,7 +29,7 @@ if(argv) {
       /*
         or run fake task to avoid process exit
       */
-      // this.runFakeTesk();
+      // mixApi.runFakeTesk();
       // return true;
   }  
 }
