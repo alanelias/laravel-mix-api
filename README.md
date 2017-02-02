@@ -143,6 +143,7 @@ if(mixApi.argv.isArgv('extract')) {
     console.log("extract");
     mixApi.abort(null);
 }
+mixApi.run();
 ```
 
 ## Installation
