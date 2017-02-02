@@ -92,7 +92,7 @@ npm run production -- api="assets"
 
 ## Installation
 **npm** scripts add `--define` at the end of each line
-```
+```json
 {
   "private": true,
   "scripts": {
@@ -108,7 +108,7 @@ npm run production -- api="assets"
 
 ## Installation
 **webpack.mix.js** 
-```
+```js
 let mix = require('laravel-mix'),
     MixApi = require("laravel-mix-api");
 mixApi = new MixApi(mix);
