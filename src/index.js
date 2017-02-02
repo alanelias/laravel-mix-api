@@ -161,12 +161,12 @@ class Api extends MixApi {
     applyCustomPath(path) {
         var config = self.config.get(); // Todo
 
-        if (!config.filters) {
+        if (!config.alias) {
             return path;
         }
         try {
             path = path.replace(config.other.RegExp, function (matched) {
-                return config.filters[matched];
+                return config.alias[matched];
             });
         } catch (error) {
 
