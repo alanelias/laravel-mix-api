@@ -85,7 +85,7 @@ Global Packages:
 npm install webpack babel cross-env autoprefixer -g
 ```
 
-**On Deploy** run the following commands: 
+**On Deploy** run the following command: 
 ```
 npm run production -- api="assets"
 ```
@@ -101,14 +101,12 @@ mixApi.setConfig({
         styles: "resources/assets/styles.json",
         scripts: "resources/assets/scripts.json",
         assets: "resources/assets/assets.json"
-    }, filters: {
+    }, 
+    alias: {
         "%bower%": "vendor/bower_dl",
         "%node%": "node_modules",
         "%images%": "public/images",
         "%fonts%": "public/fonts"
-    },
-    other: {
-        chmod: 666
     }
 });
 mixApi.run();
@@ -122,7 +120,7 @@ mixApi.setConfig({
     "scripts": "scripts.json",
     "assets": "assets.json"
   },
-  "filters": {
+  "alias": {
     "%bower%": "vendor/bower_dl",
     "%node%": "node_modules",
     "%images%": "public/images",
@@ -159,6 +157,7 @@ Create **styles.json**  [see documentaion](docs/styles.md)
       {
         "type": "sass",
         "filesIn": "app.scss",
+        "fileOut": "public/css/app.js",
         "version": "css/app.css"
       }
     ]
@@ -169,6 +168,7 @@ Create **styles.json**  [see documentaion](docs/styles.md)
       {
         "type": "sass",
         "filesIn": "pages/app-home.scss",
+        "fileOut": "public/css/app-home.js",
         "version": "css/app-home.css"
       }
     ]
@@ -223,6 +223,7 @@ Create **assets.json** [see documentaion](docs/assets.md)
     "package": "Bootstrap",
     "files": [
       {
+        "tag": "fonts",
         "copy": {
           "from": "%bower%/bootstrap-sass/assets/fonts/bootstrap/**",
           "to": "public/fonts/bootstrap"
@@ -234,6 +235,7 @@ Create **assets.json** [see documentaion](docs/assets.md)
     "package": "Font Awesome",
     "files": [
       {
+        "tag": "fonts",
         "copy": {
           "from": "%bower%/font-awesome/fonts/**",
           "to": "public/fonts/font-awesome"
@@ -272,6 +274,7 @@ Create **assets.json** [see documentaion](docs/assets.md)
         }
       },
       {
+        "tag": "images",
         "copy": {
           "from": "%bower%/slider-pro/dist/css/images/**",
           "to": "public/images/slider-pro/"
