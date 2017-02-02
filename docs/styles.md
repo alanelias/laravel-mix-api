@@ -39,7 +39,6 @@
  */
 ```
 
-### adding tasks in `webpack.mix.js`:
 
 
 [Go Back](../README.md)
