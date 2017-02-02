@@ -1,7 +1,7 @@
 
 ## Override Config
 
-**1.** override api config (files, aliases and path) 
+**Api Config **
 ```js
 mixApi.setConfig({
   "path": {
@@ -45,7 +45,7 @@ mixApi.setConfig({
 ```
 
 
-**files:** by default they will be in the project root dir but you can override the path e.g "styles": "/resources/styles.json"
+**task files:** by default they will be in the project root dir but you can override the path e.g "styles": "/resources/styles.json"
 ```json
 {
   "files": {
@@ -55,7 +55,7 @@ mixApi.setConfig({
   }
 }
 ```
-
+[click here to see another way to include tasks](tasks.md) 
 
 **aliases:** path alias it allowed you to change the default dir in file path e.g:
 "%key%/somewhere/somefile.any"
@@ -84,7 +84,7 @@ By Default: `"chmod": "off"`
 
 **Related:** https://github.com/sindresorhus/gulp-chmod 
 
-**Elixir Notifications:** some people don't like mix notifications so you can turn it off allways by adding this:
+**Mix Notifications:** some people don't like mix notifications so you can turn it off allways by adding this:
 
 ```json
 {
@@ -96,7 +96,7 @@ By Default: `"chmod": "off"`
 
 ## Switch from json to js
 
-if you like using javascript instead json you can override files names also:
+if you like using javascript instead json you can override files names:
  
 ```json
 {
