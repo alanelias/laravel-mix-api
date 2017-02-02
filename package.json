@@ -1,9 +1,8 @@
 {
   "name": "laravel-mix-api",
-  "version": "2.0.0",
-  "description": "Laravel Mix Api is npm package built on top of laravel-mix and gulp, its an easy cleaning solution to CSS / JS mess. Giving you a nice clean structure for organizing all your sites assets whether it is images, javascript files, or stylesheets and keeps the power of SASS, Browserify, versioning at your fingertips in simple commands you might already be familiar with. The advantage of this package is breaking down all your project assets files by filtering gulp and dealing with json files without editing gulp",
+  "version": "1.0.0",
+  "description": "Its is npm package built on top of laravel-mix and webpack, its an easy cleaning solution for big projects. Giving you a nice clean structure for organizing all your site assets whether it is images, javascript files, or stylesheets and gives the power of building big projects or multi apps under one project e.g `npm run watch — api=“templates:admin,chat&js”`, and keep all webpack functions at your fingertips in simple commands you might already be familiar with. The advantage of this package is breaking down all your project assets files as templates by filtering templates and dealing with JSON files instead js.",
   "keywords": [
-    "gulp",
     "laravel-mix",
     "laravel-mix-api",
     "scss",
@@ -12,7 +11,9 @@
     "scripts",
     "styles",
     "fragments",
-    "gulp filter",
+    "filter",
+    "big projects",
+    "big app",
     "filter",
     "templates",
     "javascript",
@@ -27,7 +28,7 @@
   "author": "Alan Elias",
   "license": "MIT",
   "scripts": {
-    "gulp": "gulp"
+
   },
   "maintainers": [
     {
@@ -36,7 +37,6 @@
     }
   ],
   "dependencies": {
-    "gulp": "^3.9.1",
     "del": "^2.2.1",
     "gulp-color": "0.0.1",
     "gulp-rename": "^1.2.2",
