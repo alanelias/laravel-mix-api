@@ -301,7 +301,7 @@ To get `first or second route` js file your-website.com/`%first-route%`/*
 {!! \App\Helpers\AssetsHelper::pageScript() !!}
 ```
 
-# api commands and flags
+# Api commands and flags
 [see documentaion](docs/help.md) 
 
 start with:
