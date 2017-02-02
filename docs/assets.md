@@ -1,7 +1,7 @@
 
 
 
-# assets.json
+# assets.json 
 
 Some packages doesn't support sass or less so by using assets you can search and replace path string inside js or css file e.g:
 move the package images to your project public folder `public/images/package-name/`
@@ -110,5 +110,7 @@ and then do search and replace for images path in the css file (find `images/` r
 ```
 
 **Note** if you have a problem with permissions [see documentation](config.md) about overriding chmod settings
+
+[Click here to see another way to setup tasks](tasks.md)
 
 [Go Back](../README.md)
