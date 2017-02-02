@@ -33,7 +33,7 @@ class Config {
                 RegExp: null,
                 chmod: "off"
             },
-            filters: {},
+            alias: {},
             fakeTask: {
                 filesIn: "node_modules/laravel-mix-api/src/successfully-completed-task.js",
                 fileOut: "../node_modules/laravel-mix-api/src/successfully-completed-task.js",
@@ -48,7 +48,7 @@ class Config {
      */
     modify(config, api) {
         this.config = api.mergeRecursive(this.config, config);
-        this.config.other.RegExp = new RegExp(Object.keys(this.config.filters).join("|"), "gi");
+        this.config.other.RegExp = new RegExp(Object.keys(this.config.alias).join("|"), "gi");
     }
 
     /**
