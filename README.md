@@ -1,5 +1,5 @@
 # laravel-mix-api
-It's `npm package` built on top of laravel-mix and webpack, its an easy cleaning solution to CSS / JS mess. Giving you a nice clean structure for organizing all your site assets whether it is images, javascript files, or stylesheets and gives the power of building big projects or multi apps under one project e.g:
+It's `npm package` built on top of laravel-mix and webpack, its an easy cleaning solution for big projects. Giving you a nice clean structure for organizing all your site assets whether it is images, javascript files, or stylesheets and gives the power of building big projects or multi apps under one project e.g:
 `npm run watch — api=“templates:admin,chat&js”`
 and keep all webpack functions at your fingertips in simple commands you might already be familiar with.
 **The advantage of this package is breaking down all your project assets files as templates by filtering templates and dealing with JSON files instead js and keeping your assets minimal per page instead of loading everything in each page.** 
