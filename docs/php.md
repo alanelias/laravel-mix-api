@@ -51,7 +51,7 @@ class AssetsHelper
 
         $manifest = null;
 
-        if (file_exists(public_path('build/mix-manifest.json'))) {
+        if (file_exists(public_path('mix-manifest.json'))) {
 
             $manifest = json_decode(file_get_contents($manifest_file), true);
 
