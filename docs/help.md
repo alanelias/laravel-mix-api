@@ -1,6 +1,6 @@
 
 
-# api Commands
+# Api Commands
 
 TOdo
 
