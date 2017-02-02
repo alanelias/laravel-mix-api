@@ -6,7 +6,7 @@
 Some packages doesn't support sass or less so by using assets you can search and replace path string inside js or css file e.g:
 move the package images to your project public folder `public/images/package-name/`
 and then do search and replace for images path in the css file (find `images/` replace with `/images/package-name/`) and save the file in different dir inside the package folder to be instead `css/` to `sass/` and then `@import "....../package-name/sass/styles.scss";` import to app.scss or any where you want
-```json
+```js
 [
   {
     "package": "Slider Pro",
