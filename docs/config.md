@@ -31,7 +31,7 @@ mixApi.setConfig({
     "DISABLE_NOTIFIER": false,
     "chmod": "off"
   },
-  "filters": {
+  "alias": {
     "%bower%": "vendor/bower_dl",
     "%node%": "node_modules",
     "%images%": "public/images",
