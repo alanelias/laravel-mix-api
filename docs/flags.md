@@ -36,5 +36,11 @@ if(argv) {
 mixApi.run();
 ```
 
+***mix.extract([])***
+```js
+mix.extract(['jquery', 'vue']);
+mixApi.run();
+```
+
 
 [Go Back](../README.md)
