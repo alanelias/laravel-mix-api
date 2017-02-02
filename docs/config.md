@@ -36,6 +36,10 @@ mixApi.setConfig({
     "%node%": "node_modules",
     "%images%": "public/images",
     "%fonts%": "public/fonts"
+  },
+  "fakeTask": {
+      filesIn: "node_modules/laravel-mix-api/src/successfully-completed-task.js",
+      fileOut: "../node_modules/laravel-mix-api/src/successfully-completed-task.js"
   }
 });
 ```
@@ -59,7 +63,6 @@ mixApi.setConfig({
 ```json
 {
   "alias": {
-    "%key%": "value",
     "%key%": "value",
     "%images%": "public/images",
     "%fonts%": "public/fonts"
@@ -112,6 +115,17 @@ var tasks = [
     // or you can try both
 ];
 module.exports =  tasks;
+```
+
+## Fake Task
+laravel-mix fource to compile at least one js file or process will exit with exception 
+so fake task allowed you to run `npm run dev -- api="css"` to compile only styles or watch.
+you can modify this and add your custom file or disable it by `fakeTask: null`.
+```
+fakeTask: {
+    filesIn: "node_modules/laravel-mix-api/src/successfully-completed-task.js",
+    fileOut: "../node_modules/laravel-mix-api/src/successfully-completed-task.js"
+}
 ```
 
 
