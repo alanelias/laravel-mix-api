@@ -84,4 +84,6 @@ api="clean&assets&compile" compile means fource compile after assets and clean t
 
 ***`npm run production -- api="clean&assets"`***
 
+[Click here to add your custom flags](flags.md)
+
 [Go Back](../README.md)
