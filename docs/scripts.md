@@ -37,5 +37,7 @@
  */
 ```
 
+[Click here to see another way to setup tasks](tasks.md)
+
 
 [Go Back](../README.md)
