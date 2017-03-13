@@ -156,7 +156,7 @@ Create **styles.json**  [see documentaion](docs/styles.md)
       {
         "type": "sass",
         "filesIn": "app.scss",
-        "fileOut": "public/css/app.js",
+        "fileOut": "public/css/app.css",
         "version": "css/app.css"
       }
     ]
@@ -167,7 +167,7 @@ Create **styles.json**  [see documentaion](docs/styles.md)
       {
         "type": "sass",
         "filesIn": "pages/app-home.scss",
-        "fileOut": "public/css/app-home.js",
+        "fileOut": "public/css/app-home.css",
         "version": "css/app-home.css"
       }
     ]
