@@ -36,7 +36,7 @@ class Config {
             alias: {},
             fakeTask: {
                 filesIn: "node_modules/laravel-mix-api/src/successfully-completed-task.js",
-                fileOut: "../node_modules/laravel-mix-api/src/successfully-completed-task.js",
+                fileOut: "../node_modules/laravel-mix-api/src/successfully-completed.js",
                 chmod: 666
             }
         };
