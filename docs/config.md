@@ -124,7 +124,7 @@ you can modify this and add your custom file or disable it by `fakeTask: null`.
 ```
 fakeTask: {
     filesIn: "node_modules/laravel-mix-api/src/successfully-completed-task.js",
-    fileOut: "../node_modules/laravel-mix-api/src/successfully-completed-task.js"
+    fileOut: "../node_modules/laravel-mix-api/src/successfully-completed.js"
 }
 ```
 
